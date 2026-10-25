@@ -1,0 +1,46 @@
+
+<project>/openwrt/bench/bin/isa-abi-soft-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010310 <bench_double>:
+   10310:	1101                	addi	sp,sp,-32
+   10312:	c452                	sw	s4,8(sp)
+   10314:	8a2a                	mv	s4,a0
+   10316:	0805c533          	zext.h	a0,a1
+   1031a:	ce06                	sw	ra,28(sp)
+   1031c:	cc22                	sw	s0,24(sp)
+   1031e:	ca26                	sw	s1,20(sp)
+   10320:	c84a                	sw	s2,16(sp)
+   10322:	c64e                	sw	s3,12(sp)
+   10324:	c256                	sw	s5,4(sp)
+   10326:	017010ef          	jal	11b3c <__floatunsidf>
+   1032a:	9401a603          	lw	a2,-1728(gp) # 1e140 <__SDATA_BEGIN__>
+   1032e:	9441a683          	lw	a3,-1724(gp) # 1e144 <__SDATA_BEGIN__+0x4>
+   10332:	4a81                	li	s5,0
+   10334:	2e0010ef          	jal	11614 <__muldf3>
+   10338:	9481a603          	lw	a2,-1720(gp) # 1e148 <__SDATA_BEGIN__+0x8>
+   1033c:	94c1a683          	lw	a3,-1716(gp) # 1e14c <__SDATA_BEGIN__+0xc>
+   10340:	211000ef          	jal	10d50 <__adddf3>
+   10344:	9501a903          	lw	s2,-1712(gp) # 1e150 <__SDATA_BEGIN__+0x10>
+   10348:	9541a983          	lw	s3,-1708(gp) # 1e154 <__SDATA_BEGIN__+0x14>
+   1034c:	9581a403          	lw	s0,-1704(gp) # 1e158 <__SDATA_BEGIN__+0x18>
+   10350:	95c1a483          	lw	s1,-1700(gp) # 1e15c <__SDATA_BEGIN__+0x1c>
+   10354:	864a                	mv	a2,s2
+   10356:	86ce                	mv	a3,s3
+   10358:	2bc010ef          	jal	11614 <__muldf3>
+   1035c:	8622                	mv	a2,s0
+   1035e:	86a6                	mv	a3,s1
+   10360:	0a85                	addi	s5,s5,1
+   10362:	1ef000ef          	jal	10d50 <__adddf3>
+   10366:	ff5a17e3          	bne	s4,s5,10354 <bench_double+0x44>
+   1036a:	40f2                	lw	ra,28(sp)
+   1036c:	4462                	lw	s0,24(sp)
+   1036e:	44d2                	lw	s1,20(sp)
+   10370:	4942                	lw	s2,16(sp)
+   10372:	49b2                	lw	s3,12(sp)
+   10374:	4a22                	lw	s4,8(sp)
+   10376:	4a92                	lw	s5,4(sp)
+   10378:	6105                	addi	sp,sp,32
+   1037a:	8082                	ret

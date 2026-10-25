@@ -1,0 +1,52 @@
+
+<project>/openwrt/bench/nolib/nolib-hard-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010300 <bench_float_call>:
+   10300:	05c2                	slli	a1,a1,0x10
+   10302:	000117b7          	lui	a5,0x11
+   10306:	81c1                	srli	a1,a1,0x10
+   10308:	8c87a687          	flw	fa3,-1848(a5) # 108c8 <abi_float_step+0xc8>
+   1030c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10310:	000117b7          	lui	a5,0x11
+   10314:	8cc7a707          	flw	fa4,-1844(a5) # 108cc <abi_float_step+0xcc>
+   10318:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1031c:	1101                	addi	sp,sp,-32
+   1031e:	ca26                	sw	s1,20(sp)
+   10320:	ce06                	sw	ra,28(sp)
+   10322:	84aa                	mv	s1,a0
+   10324:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10328:	e0078553          	fmv.x.w	a0,fa5
+   1032c:	cca1                	beqz	s1,10384 <bench_float_call+0x84>
+   1032e:	00011737          	lui	a4,0x11
+   10332:	000117b7          	lui	a5,0x11
+   10336:	e622                	fsw	fs0,12(sp)
+   10338:	e426                	fsw	fs1,8(sp)
+   1033a:	8d07a407          	flw	fs0,-1840(a5) # 108d0 <abi_float_step+0xd0>
+   1033e:	8d472487          	flw	fs1,-1836(a4) # 108d4 <abi_float_step+0xd4>
+   10342:	cc22                	sw	s0,24(sp)
+   10344:	4401                	li	s0,0
+   10346:	0001                	nop
+   10348:	00000013          	nop
+   1034c:	00000013          	nop
+   10350:	00000013          	nop
+   10354:	00000013          	nop
+   10358:	00000013          	nop
+   1035c:	00000013          	nop
+   10360:	f0050553          	fmv.w.x	fa0,a0
+   10364:	20948653          	fmv.s	fa2,fs1
+   10368:	208405d3          	fmv.s	fa1,fs0
+   1036c:	0405                	addi	s0,s0,1
+   1036e:	00000097          	auipc	ra,0x0
+   10372:	492080e7          	jalr	1170(ra) # 10800 <abi_float_step>
+   10376:	e0050553          	fmv.x.w	a0,fa0
+   1037a:	fe8493e3          	bne	s1,s0,10360 <bench_float_call+0x60>
+   1037e:	4462                	lw	s0,24(sp)
+   10380:	6432                	flw	fs0,12(sp)
+   10382:	64a2                	flw	fs1,8(sp)
+   10384:	40f2                	lw	ra,28(sp)
+   10386:	44d2                	lw	s1,20(sp)
+   10388:	6105                	addi	sp,sp,32
+   1038a:	8082                	ret

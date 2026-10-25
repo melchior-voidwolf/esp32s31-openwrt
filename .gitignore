@@ -1,0 +1,9 @@
+backups/
+openwrt/openwrt/
+openwrt/bench/luci-perf/
+**/urandom.seed
+*.tmp
+*.out
+__pycache__/
+*.pyc
+.DS_Store

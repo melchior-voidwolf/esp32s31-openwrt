@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+# Deterministic static-LAN setup for the light AP.
+# hostapd (S25) creates br-lan via its bridge= directive; we wait for it,
+# enslave eth0, give it the static IP and the default route.  Runs without
+# netifd, which thrashes on the esp_hosted wlan0 events on this board.
+# NOTE: legacy start()/stop() hooks — start_service() is the procd callback
+# and is never called for a script without a procd instance block.
+START=26
+STOP=90
+
+start() {
+	local i
+	# br-lan appears once hostapd's BSS comes up (wlan0 probes ~1-2 min
+	# after boot while the hart0 firmware chain comes alive)
+	for i in $(seq 1 90); do
+		[ -d /sys/class/net/br-lan ] && break
+		sleep 2
+	done
+	[ -d /sys/class/net/br-lan ] || {
+		echo "lanstatic: br-lan never appeared" >&2
+		return 1
+	}
+	ip link set eth0 up
+	ip link set eth0 master br-lan
+	ip addr replace 10.0.0.84/24 dev br-lan
+	ip link set br-lan up
+	ip route replace default via 10.0.0.1
+	echo "nameserver 10.0.0.1" > /tmp/resolv.conf
+}

@@ -1,0 +1,16 @@
+# Generate a per-device seed before the stock 81_urandom_seed reader runs.
+# This file is never shipped in the image; it only exists in the live overlay.
+
+s31_generate_urandom_seed() {
+    [ -f /etc/urandom.seed ] && return 0
+
+    if getrandom 512 > /etc/urandom.seed.tmp; then
+        chown root:root /etc/urandom.seed.tmp
+        chmod 600 /etc/urandom.seed.tmp
+        mv /etc/urandom.seed.tmp /etc/urandom.seed
+    else
+        rm -f /etc/urandom.seed.tmp
+    fi
+}
+
+boot_hook_add preinit_main s31_generate_urandom_seed

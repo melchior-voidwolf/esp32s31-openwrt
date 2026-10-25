@@ -1,0 +1,608 @@
+{
+  "watermarks": {
+    "1024": {
+      "n": 24,
+      "p50": 0.6913424649974331,
+      "p95": 4.261896719006472,
+      "max": 4.3418166560004465,
+      "over_1s": 0.4583333333333333,
+      "over_2s": 0.3333333333333333
+    },
+    "512": {
+      "n": 24,
+      "p50": 0.32393879300070694,
+      "p95": 1.9455414690019097,
+      "max": 2.070037270998,
+      "over_1s": 0.08333333333333333,
+      "over_2s": 0.041666666666666664
+    }
+  },
+  "blocks": {
+    "A1": {
+      "n": 6,
+      "p50": 0.29663544049981283,
+      "p95": 3.5121909879962914,
+      "max": 3.5121909879962914,
+      "over_1s": 0.3333333333333333,
+      "over_2s": 0.16666666666666666
+    },
+    "B1": {
+      "n": 6,
+      "p50": 0.3243982510030037,
+      "p95": 1.9455414690019097,
+      "max": 1.9455414690019097,
+      "over_1s": 0.16666666666666666,
+      "over_2s": 0.0
+    },
+    "B2": {
+      "n": 6,
+      "p50": 0.32546746800653636,
+      "p95": 0.34678794399951585,
+      "max": 0.34678794399951585,
+      "over_1s": 0.0,
+      "over_2s": 0.0
+    },
+    "A2": {
+      "n": 6,
+      "p50": 1.33538175799913,
+      "p95": 4.261896719006472,
+      "max": 4.261896719006472,
+      "over_1s": 0.5,
+      "over_2s": 0.5
+    },
+    "B3": {
+      "n": 6,
+      "p50": 0.3235014880046947,
+      "p95": 0.3568603890016675,
+      "max": 0.3568603890016675,
+      "over_1s": 0.0,
+      "over_2s": 0.0
+    },
+    "A3": {
+      "n": 6,
+      "p50": 0.319034255000588,
+      "p95": 3.216437979004695,
+      "max": 3.216437979004695,
+      "over_1s": 0.3333333333333333,
+      "over_2s": 0.16666666666666666
+    },
+    "A4": {
+      "n": 6,
+      "p50": 1.9699939130005077,
+      "p95": 4.3418166560004465,
+      "max": 4.3418166560004465,
+      "over_1s": 0.6666666666666666,
+      "over_2s": 0.5
+    },
+    "B4": {
+      "n": 6,
+      "p50": 0.3084511225024471,
+      "p95": 2.070037270998,
+      "max": 2.070037270998,
+      "over_1s": 0.16666666666666666,
+      "over_2s": 0.16666666666666666
+    }
+  },
+  "rows": [
+    {
+      "block": "warmup",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.7915175240050303,
+      "total": 4.161262421999709,
+      "watermark": 1024,
+      "scored": false
+    },
+    {
+      "block": "warmup",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.9210802980087465,
+      "total": 8.230820584998582,
+      "watermark": 1024,
+      "scored": false
+    },
+    {
+      "block": "warmup",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 4.80794114699529,
+      "total": 5.724938529994688,
+      "watermark": 1024,
+      "scored": false
+    },
+    {
+      "block": "warmup",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.2278659169969615,
+      "total": 1.5448712630022783,
+      "watermark": 1024,
+      "scored": false
+    },
+    {
+      "block": "A1",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.7517573749937583,
+      "total": 3.5121909879962914,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A1",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.5048322079965146,
+      "total": 1.5178213229955873,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A1",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.28494154699728824,
+      "total": 0.29451848300232086,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A1",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.28737317900231574,
+      "total": 0.2964115720096743,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A1",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.28490695600339677,
+      "total": 0.2968593089899514,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A1",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.28452251199632883,
+      "total": 0.2959137609868776,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.5521415830007754,
+      "total": 1.9455414690019097,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.40207277100125793,
+      "total": 0.41489991899288725,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.312987240991788,
+      "total": 0.32393322300049476,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31308078300207853,
+      "total": 0.32384259899845347,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31101491599110886,
+      "total": 0.3200807439861819,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B1",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31495669500145596,
+      "total": 0.3248632790055126,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.33487378699646797,
+      "total": 0.34678794399951585,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31452695999178104,
+      "total": 0.33090352900035214,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3121851510077249,
+      "total": 0.3239535910106497,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31704545200045686,
+      "total": 0.32698134500242304,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3112684219959192,
+      "total": 0.32211303600342944,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B2",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31296331899648067,
+      "total": 0.32386536699777935,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.3270326950005256,
+      "total": 2.7960079819895327,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.8448907550045988,
+      "total": 4.261896719006472,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.7728804039943498,
+      "total": 2.2547852830030024,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.4041287729924079,
+      "total": 0.4159782329952577,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.30102418499882333,
+      "total": 0.3199510419945,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A2",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.29998283300665207,
+      "total": 0.3200024690013379,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3412578220013529,
+      "total": 0.3568603890016675,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31433400500100106,
+      "total": 0.3263469189987518,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.301937774012913,
+      "total": 0.32081703300355,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3130119840061525,
+      "total": 0.3230586130084703,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3138924029917689,
+      "total": 0.3239443630009191,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B3",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3098995659966022,
+      "total": 0.3208522329950938,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.6557566300034523,
+      "total": 3.216437979004695,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.8692703760025324,
+      "total": 1.1570006260008086,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.30832997799734585,
+      "total": 0.32019878800201695,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.3059669100039173,
+      "total": 0.31697310200252105,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.2991092369920807,
+      "total": 0.3178697219991591,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A3",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.29303683899343014,
+      "total": 0.31309741298900917,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 2.462395415001083,
+      "total": 3.260370107003837,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 3.575268023996614,
+      "total": 4.3418166560004465,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.7425848559942096,
+      "total": 2.212012774994946,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.7629239749949193,
+      "total": 1.7279750510060694,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.9468886680115247,
+      "total": 0.9667066969996085,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "A4",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.29599494401190896,
+      "total": 0.3068714990076842,
+      "watermark": 1024,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 1.7431577569950605,
+      "total": 2.070037270998,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.5889146210101899,
+      "total": 0.6009417480090633,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.28699201000563335,
+      "total": 0.3049607540015131,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.29504033899866045,
+      "total": 0.3058616100024665,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 5,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.2969823820021702,
+      "total": 0.3089338010031497,
+      "watermark": 512,
+      "scored": true
+    },
+    {
+      "block": "B4",
+      "request": 6,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.2867556509881979,
+      "total": 0.3079684440017445,
+      "watermark": 512,
+      "scored": true
+    }
+  ]
+}

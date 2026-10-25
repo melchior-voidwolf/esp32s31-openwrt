@@ -1,0 +1,25 @@
+
+<project>/openwrt/bench/bin/isa-abi-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010234 <bench_float>:
+   10234:	0805c5b3          	zext.h	a1,a1
+   10238:	9401a707          	flw	fa4,-1728(gp) # 1b140 <__SDATA_BEGIN__+0x20>
+   1023c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10240:	9441a607          	flw	fa2,-1724(gp) # 1b144 <__SDATA_BEGIN__+0x24>
+   10244:	10e7f7d3          	fmul.s	fa5,fa5,fa4
+   10248:	94c1a707          	flw	fa4,-1716(gp) # 1b14c <__SDATA_BEGIN__+0x2c>
+   1024c:	9481a687          	flw	fa3,-1720(gp) # 1b148 <__SDATA_BEGIN__+0x28>
+   10250:	00c7f7d3          	fadd.s	fa5,fa5,fa2
+   10254:	4701                	li	a4,0
+   10256:	e00787d3          	fmv.x.w	a5,fa5
+   1025a:	f00787d3          	fmv.w.x	fa5,a5
+   1025e:	0705                	addi	a4,a4,1
+   10260:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   10264:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10268:	e00787d3          	fmv.x.w	a5,fa5
+   1026c:	fee517e3          	bne	a0,a4,1025a <bench_float+0x26>
+   10270:	853e                	mv	a0,a5
+   10272:	8082                	ret

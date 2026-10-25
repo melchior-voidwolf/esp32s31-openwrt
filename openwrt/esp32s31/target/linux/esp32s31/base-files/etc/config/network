@@ -1,0 +1,9 @@
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.255.0.0'
+
+# No lan interface or IPv6 ula_prefix here on purpose: netifd stays idle
+# (it wedges chasing esp_hosted wlan0/bridge events on this 16 MiB board).
+# Static LAN setup is done by /etc/init.d/lanstatic after hostapd creates br-lan.

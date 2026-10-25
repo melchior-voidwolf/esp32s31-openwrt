@@ -1,0 +1,203 @@
+cat /tmp/nolib-final.log
+Linux esp32s31 7.3.0 #3 PREEMPT Sat Oct 24 22:59:22 CST 2026 riscv32 GNU/Linux
+              total        used        free      shared  buff/cache   available
+Mem:          10844        7744        1400          20        1700         676
+Swap:          5116        1844        3272
+VARIANT=soft-base ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.104544 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.169355 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.301417 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.072482 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037288 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.160618 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.171264 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.327102 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.086685 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037203 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.084599 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.168508 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.149293 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037189 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037206 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.074495 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.155342 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.169939 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037087 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.031792 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.096223 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.136879 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.199628 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037332 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017098 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.084761 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.195638 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.155980 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037166 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.047275 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.104838 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.159346 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.219565 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.028682 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017091 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.044030 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.079265 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.127277 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027099 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016937 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.044070 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.078010 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.128549 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027226 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016896 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.045337 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.068860 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.128725 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027260 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016859 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.044022 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.079455 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.067887 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.016883 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016892 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.044436 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.067896 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.067753 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.017369 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017020 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=4
+RESULT mode=float iterations=1000000 seconds=0.044345 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.067648 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.067773 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.018200 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017061 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=4
+RESULT mode=float iterations=1000000 seconds=0.044106 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.079380 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.069339 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.017015 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017005 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=4
+RESULT mode=float iterations=1000000 seconds=0.043895 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.068583 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.128586 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027209 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016875 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=4
+RESULT mode=float iterations=1000000 seconds=0.044131 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.077989 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.127377 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027060 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017021 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=5
+RESULT mode=float iterations=1000000 seconds=0.044293 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.078087 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.129856 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027096 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017051 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=5
+RESULT mode=float iterations=1000000 seconds=0.045945 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.068636 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.128556 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.027035 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016999 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=5
+RESULT mode=float iterations=1000000 seconds=0.044362 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.077948 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.067855 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.017066 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.017080 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=5
+RESULT mode=float iterations=1000000 seconds=0.062646 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.159099 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.141912 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037251 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.030828 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=6
+RESULT mode=float iterations=1000000 seconds=0.084942 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.159075 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.135821 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.016955 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037079 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=6
+RESULT mode=float iterations=1000000 seconds=0.108390 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.161164 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.128415 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037228 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.027031 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=6
+RESULT mode=float iterations=1000000 seconds=0.096723 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.137800 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.260073 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.113059 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.048128 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=6
+RESULT mode=float iterations=1000000 seconds=0.104827 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.169212 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.299418 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.062802 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037401 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-base ROUND=7
+RESULT mode=float iterations=1000000 seconds=0.118506 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.218223 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.352044 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.067510 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037228 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-base ROUND=7
+RESULT mode=float iterations=1000000 seconds=0.107656 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.146786 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.343462 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.052845 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.037211 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=soft-full ROUND=7
+RESULT mode=float iterations=1000000 seconds=0.095071 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.183153 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.143148 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.037113 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.038652 checksum=b53c8ad8
+NOLIB_DONE
+VARIANT=hard-full ROUND=7
+RESULT mode=float iterations=1000000 seconds=0.126247 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.155000 checksum=3f82b3c0
+RESULT mode=bits iterations=1000000 seconds=0.148657 checksum=cbf214d1
+RESULT mode=zba iterations=1000000 seconds=0.063693 checksum=0ec8e0ae
+RESULT mode=int-control iterations=1000000 seconds=0.016943 checksum=b53c8ad8
+NOLIB_DONE
+NOLIB_BOARD_DONE rounds=7
+root@esp32s31:~# 

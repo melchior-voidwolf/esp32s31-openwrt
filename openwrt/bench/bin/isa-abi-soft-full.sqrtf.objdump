@@ -1,0 +1,86 @@
+
+<project>/openwrt/bench/bin/isa-abi-soft-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00011e2e <sqrtf>:
+   11e2e:	1141                	addi	sp,sp,-16
+   11e30:	ff800737          	lui	a4,0xff800
+   11e34:	c606                	sw	ra,12(sp)
+   11e36:	972a                	add	a4,a4,a0
+   11e38:	7f000637          	lui	a2,0x7f000
+   11e3c:	86aa                	mv	a3,a0
+   11e3e:	0ac77663          	bgeu	a4,a2,11eea <sqrtf+0xbc>
+   11e42:	00869793          	slli	a5,a3,0x8
+   11e46:	0807cd63          	bltz	a5,11ee0 <sqrtf+0xb2>
+   11e4a:	00869713          	slli	a4,a3,0x8
+   11e4e:	29f71713          	bseti	a4,a4,0x1f
+   11e52:	0106d613          	srli	a2,a3,0x10
+   11e56:	0fe67613          	andi	a2,a2,254
+   11e5a:	00009797          	auipc	a5,0x9
+   11e5e:	1f278793          	addi	a5,a5,498 # 1b04c <__rsqrt_tab>
+   11e62:	97b2                	add	a5,a5,a2
+   11e64:	0007d583          	lhu	a1,0(a5)
+   11e68:	01071513          	slli	a0,a4,0x10
+   11e6c:	0016d613          	srli	a2,a3,0x1
+   11e70:	05c2                	slli	a1,a1,0x10
+   11e72:	02b73733          	mulhu	a4,a4,a1
+   11e76:	1fc006b7          	lui	a3,0x1fc00
+   11e7a:	9636                	add	a2,a2,a3
+   11e7c:	7f8006b7          	lui	a3,0x7f800
+   11e80:	8e75                	and	a2,a2,a3
+   11e82:	c00007b7          	lui	a5,0xc0000
+   11e86:	80000837          	lui	a6,0x80000
+   11e8a:	02e5b6b3          	mulhu	a3,a1,a4
+   11e8e:	40d786b3          	sub	a3,a5,a3
+   11e92:	02e6b733          	mulhu	a4,a3,a4
+   11e96:	02b6b6b3          	mulhu	a3,a3,a1
+   11e9a:	0706                	slli	a4,a4,0x1
+   11e9c:	0686                	slli	a3,a3,0x1
+   11e9e:	02e6b6b3          	mulhu	a3,a3,a4
+   11ea2:	8f95                	sub	a5,a5,a3
+   11ea4:	02e7b7b3          	mulhu	a5,a5,a4
+   11ea8:	17fd                	addi	a5,a5,-1 # bfffffff <__global_pointer$+0xbffe17ff>
+   11eaa:	8399                	srli	a5,a5,0x6
+   11eac:	02f786b3          	mul	a3,a5,a5
+   11eb0:	40a78733          	sub	a4,a5,a0
+   11eb4:	00178513          	addi	a0,a5,1
+   11eb8:	9736                	add	a4,a4,a3
+   11eba:	01f75593          	srli	a1,a4,0x1f
+   11ebe:	953a                	add	a0,a0,a4
+   11ec0:	95be                	add	a1,a1,a5
+   11ec2:	8f29                	xor	a4,a4,a0
+   11ec4:	05a6                	slli	a1,a1,0x9
+   11ec6:	00a03533          	snez	a0,a0
+   11eca:	81a5                	srli	a1,a1,0x9
+   11ecc:	0562                	slli	a0,a0,0x18
+   11ece:	01077733          	and	a4,a4,a6
+   11ed2:	8dd1                	or	a1,a1,a2
+   11ed4:	8d59                	or	a0,a0,a4
+   11ed6:	5f7070ef          	jal	19ccc <__addsf3>
+   11eda:	40b2                	lw	ra,12(sp)
+   11edc:	0141                	addi	sp,sp,16
+   11ede:	8082                	ret
+   11ee0:	00769713          	slli	a4,a3,0x7
+   11ee4:	49f71713          	bclri	a4,a4,0x1f
+   11ee8:	b7ad                	j	11e52 <sqrtf+0x24>
+   11eea:	00151713          	slli	a4,a0,0x1
+   11eee:	87aa                	mv	a5,a0
+   11ef0:	c71d                	beqz	a4,11f1e <sqrtf+0xf0>
+   11ef2:	80800737          	lui	a4,0x80800
+   11ef6:	972a                	add	a4,a4,a0
+   11ef8:	c31d                	beqz	a4,11f1e <sqrtf+0xf0>
+   11efa:	7f8007b7          	lui	a5,0x7f800
+   11efe:	00a7ec63          	bltu	a5,a0,11f16 <sqrtf+0xe8>
+   11f02:	00009597          	auipc	a1,0x9
+   11f06:	1465a583          	lw	a1,326(a1) # 1b048 <__clz_tab+0x100>
+   11f0a:	550080ef          	jal	1a45a <__mulsf3>
+   11f0e:	f48006b7          	lui	a3,0xf4800
+   11f12:	96aa                	add	a3,a3,a0
+   11f14:	b73d                	j	11e42 <sqrtf+0x14>
+   11f16:	40b2                	lw	ra,12(sp)
+   11f18:	0141                	addi	sp,sp,16
+   11f1a:	03c0406f          	j	15f56 <__math_invalidf>
+   11f1e:	853e                	mv	a0,a5
+   11f20:	bf6d                	j	11eda <sqrtf+0xac>

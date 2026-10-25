@@ -1,0 +1,82 @@
+grep ISA_ABI_BOARD_DONE /tmp/isa-abi-final.log; cat /tmp/isa-ab
+i-final.log
+ISA_ABI_BOARD_DONE iterations=1000000 rounds=3
+Linux esp32s31 7.3.0 #3 PREEMPT Sat Oct 24 22:59:22 CST 2026 riscv32 GNU/Linux
+              total        used        free      shared  buff/cache   available
+Mem:          10844        7720        1372          12        1752         660
+Swap:          5116        1652        3464
+VARIANT=soft-base ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.044076 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.067869 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.449689 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=0.889986 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.211501 checksum=cbf214d1
+VARIANT=hard-base ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.045945 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.052187 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.108307 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.255758 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.480737 checksum=cbf214d1
+VARIANT=soft-full ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.100665 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.135243 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=1.005514 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=2.002030 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.143958 checksum=cbf214d1
+VARIANT=hard-full ROUND=1
+RESULT mode=float iterations=1000000 seconds=0.075324 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.114052 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.128554 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.162034 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.067567 checksum=cbf214d1
+VARIANT=hard-full ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.044416 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.050844 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.108303 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.159126 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.067756 checksum=cbf214d1
+VARIANT=soft-full ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.044781 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.067915 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.516402 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.880843 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.136245 checksum=cbf214d1
+VARIANT=hard-base ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.104743 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.091224 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.265180 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=2.567173 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.482248 checksum=cbf214d1
+VARIANT=soft-base ROUND=2
+RESULT mode=float iterations=1000000 seconds=0.104693 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.141036 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.976352 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.629766 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.406507 checksum=cbf214d1
+VARIANT=soft-base ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.122416 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.138680 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=1.015914 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.952646 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.445239 checksum=cbf214d1
+VARIANT=hard-base ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.074558 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.122042 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.243282 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=2.156203 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.648990 checksum=cbf214d1
+VARIANT=soft-full ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.125551 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.159200 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.966608 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.600406 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.149752 checksum=cbf214d1
+VARIANT=hard-full ROUND=3
+RESULT mode=float iterations=1000000 seconds=0.084712 checksum=3f82b3c0
+RESULT mode=abi-call iterations=1000000 seconds=0.101311 checksum=3f82b3c0
+RESULT mode=sqrt iterations=1000000 seconds=0.226364 checksum=4ba2d2c4
+RESULT mode=double iterations=1000000 seconds=1.792410 checksum=3ff0567800000000
+RESULT mode=bits iterations=1000000 seconds=0.067772 checksum=cbf214d1
+ISA_ABI_BOARD_DONE iterations=1000000 rounds=3
+[1]+  Done                       wget -q -O /tmp/isa-abi-run.sh http://10.0.0.40:18080/isa-abi-run.sh && sh /tmp/isa-abi-run.sh 1000000 3 1 1>/tmp/isa-abi-final.log 2>&1
+root@esp32s31:~# 

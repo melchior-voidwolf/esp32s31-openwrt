@@ -1,0 +1,9 @@
+
+<project>/openwrt/bench/bin/isa-abi-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00011b54 <sqrtf>:
+   11b54:	58057553          	fsqrt.s	fa0,fa0
+   11b58:	8082                	ret

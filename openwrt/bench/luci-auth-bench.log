@@ -1,0 +1,34 @@
+login POST: HTTP 302 start=2.677s total=2.680s
+login redirect: /cgi-bin/luci/
+overview req1: HTTP 200 size=4237B start=4.223s total=4.735s
+overview title: esp32s31 | 概览
+overview req2: HTTP 200 size=4237B start=1.828s total=2.204s
+overview req3: HTTP 200 size=4237B start=0.313s total=0.321s
+overview req4: HTTP 200 size=4237B start=0.299s total=0.310s
+overview req5: HTTP 200 size=4237B start=0.302s total=0.312s
+overview req6: HTTP 200 size=4237B start=0.300s total=0.311s
+overview req7: HTTP 200 size=4237B start=0.301s total=0.311s
+overview req8: HTTP 200 size=4237B start=0.301s total=0.312s
+overview req9: HTTP 200 size=4237B start=0.299s total=0.309s
+overview req10: HTTP 200 size=4237B start=0.299s total=0.308s
+overview req11: HTTP 200 size=4237B start=0.302s total=0.312s
+overview req12: HTTP 200 size=4237B start=0.297s total=0.308s
+overview req13: HTTP 200 size=4237B start=0.288s total=0.308s
+overview req14: HTTP 200 size=4237B start=0.302s total=0.313s
+overview req15: HTTP 200 size=4237B start=0.301s total=0.310s
+overview req16: HTTP 200 size=4237B start=0.298s total=0.309s
+overview req17: HTTP 200 size=4237B start=0.289s total=0.309s
+overview req18: HTTP 200 size=4237B start=0.301s total=0.312s
+overview req19: HTTP 200 size=4237B start=4.651s total=5.194s
+overview req20: HTTP 200 size=4237B start=1.387s total=1.618s
+overview summary: min=0.308s p50=0.311s p95=4.735s max=5.194s
+network req1: HTTP 200 size=3179B start=0.358s total=0.364s
+network title: esp32s31 | 接口
+network req2: HTTP 200 size=3179B start=0.290s total=0.297s
+network req3: HTTP 200 size=3179B start=0.291s total=0.298s
+network req4: HTTP 200 size=3179B start=0.290s total=0.297s
+network req5: HTTP 200 size=3179B start=0.286s total=0.293s
+network req6: HTTP 200 size=3179B start=0.290s total=0.297s
+network summary: min=0.293s p50=0.297s p95=0.364s max=0.364s
+session destroyed: yes
+results: /tmp/luci-auth-results.json

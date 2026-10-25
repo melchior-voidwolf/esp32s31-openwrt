@@ -1,0 +1,19 @@
+# Notices
+
+ESP32-S31 OpenWrt contains files and binaries derived from OpenWrt, the Linux
+kernel, musl, ESP-IDF, ESP-Hosted, OpenSBI, Buildroot and other upstream
+projects. Those projects retain their original copyrights and licenses.
+
+The Korvo-1 board and ESP32-S31 are hardware names used only to identify the
+supported target. No endorsement by the hardware vendors or the OpenWrt project
+is implied.
+
+This is a development image. The default AP is open and the documented default
+password is for local development only. Change credentials and review network
+security before using the image outside a controlled test environment.
+
+本发布包含 OpenWrt、Linux、musl、ESP-IDF、ESP-Hosted、OpenSBI、Buildroot
+及其他上游项目的文件或二进制，其原始版权和许可证仍然有效。
+
+这是开发版固件。默认开放 AP 和文档中的默认密码仅用于受控测试环境，
+不得视为生产安全配置。

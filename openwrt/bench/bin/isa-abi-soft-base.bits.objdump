@@ -1,0 +1,59 @@
+
+<project>/openwrt/bench/bin/isa-abi-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+0001041e <bench_bits>:
+   1041e:	1101                	addi	sp,sp,-32
+   10420:	cc22                	sw	s0,24(sp)
+   10422:	ca26                	sw	s1,20(sp)
+   10424:	ce06                	sw	ra,28(sp)
+   10426:	c84a                	sw	s2,16(sp)
+   10428:	c64e                	sw	s3,12(sp)
+   1042a:	c452                	sw	s4,8(sp)
+   1042c:	c05a                	sw	s6,0(sp)
+   1042e:	84aa                	mv	s1,a0
+   10430:	4405                	li	s0,1
+   10432:	c191                	beqz	a1,10436 <bench_bits+0x18>
+   10434:	842e                	mv	s0,a1
+   10436:	9e378937          	lui	s2,0x9e378
+   1043a:	9b990913          	addi	s2,s2,-1607 # 9e3779b9 <__global_pointer$+0x9e3591b9>
+   1043e:	4a01                	li	s4,0
+   10440:	4b05                	li	s6,1
+   10442:	00d41713          	slli	a4,s0,0xd
+   10446:	8f21                	xor	a4,a4,s0
+   10448:	01175793          	srli	a5,a4,0x11
+   1044c:	8fb9                	xor	a5,a5,a4
+   1044e:	00579413          	slli	s0,a5,0x5
+   10452:	8c3d                	xor	s0,s0,a5
+   10454:	00146513          	ori	a0,s0,1
+   10458:	2415                	jal	1067c <__clzsi2>
+   1045a:	012509b3          	add	s3,a0,s2
+   1045e:	00146513          	ori	a0,s0,1
+   10462:	2461                	jal	106ea <__ctzsi2>
+   10464:	01354933          	xor	s2,a0,s3
+   10468:	8522                	mv	a0,s0
+   1046a:	24f5                	jal	10756 <__bswapsi2>
+   1046c:	954a                	add	a0,a0,s2
+   1046e:	00845793          	srli	a5,s0,0x8
+   10472:	01955713          	srli	a4,a0,0x19
+   10476:	00fb17b3          	sll	a5,s6,a5
+   1047a:	051e                	slli	a0,a0,0x7
+   1047c:	953a                	add	a0,a0,a4
+   1047e:	fff7c793          	not	a5,a5
+   10482:	8fe9                	and	a5,a5,a0
+   10484:	008b1933          	sll	s2,s6,s0
+   10488:	0a05                	addi	s4,s4,1
+   1048a:	00f96933          	or	s2,s2,a5
+   1048e:	fb449ae3          	bne	s1,s4,10442 <bench_bits+0x24>
+   10492:	01244533          	xor	a0,s0,s2
+   10496:	40f2                	lw	ra,28(sp)
+   10498:	4462                	lw	s0,24(sp)
+   1049a:	44d2                	lw	s1,20(sp)
+   1049c:	4942                	lw	s2,16(sp)
+   1049e:	49b2                	lw	s3,12(sp)
+   104a0:	4a22                	lw	s4,8(sp)
+   104a2:	4b02                	lw	s6,0(sp)
+   104a4:	6105                	addi	sp,sp,32
+   104a6:	8082                	ret

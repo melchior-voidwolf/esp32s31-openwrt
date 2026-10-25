@@ -1,0 +1,24 @@
+login POST: HTTP 302 start=2.454s total=2.456s
+login redirect: /cgi-bin/luci/
+overview req1: HTTP 200 size=4237B start=0.710s total=0.940s
+overview title: esp32s31 | 概览
+overview req2: HTTP 200 size=4237B start=0.303s total=0.314s
+overview req3: HTTP 200 size=4237B start=0.276s total=0.296s
+overview req4: HTTP 200 size=4237B start=0.288s total=0.300s
+overview req5: HTTP 200 size=4237B start=0.286s total=0.297s
+overview req6: HTTP 200 size=4237B start=0.286s total=0.296s
+overview req7: HTTP 200 size=4237B start=0.279s total=0.299s
+overview req8: HTTP 200 size=4237B start=0.289s total=0.300s
+overview req9: HTTP 200 size=4237B start=2.855s total=3.436s
+overview req10: HTTP 200 size=4237B start=1.509s total=1.555s
+overview req11: HTTP 200 size=4237B start=0.289s total=0.301s
+overview req12: HTTP 200 size=4237B start=0.286s total=0.295s
+overview summary: min=0.295s p50=0.300s p95=3.436s max=3.436s
+network req1: HTTP 200 size=3179B start=0.331s total=0.339s
+network title: esp32s31 | 接口
+network req2: HTTP 200 size=3179B start=0.278s total=0.284s
+network req3: HTTP 200 size=3179B start=0.268s total=0.284s
+network req4: HTTP 200 size=3179B start=0.268s total=0.284s
+network summary: min=0.284s p50=0.284s p95=0.339s max=0.339s
+session destroyed: yes
+results: /tmp/luci-auth-768-flashed.json

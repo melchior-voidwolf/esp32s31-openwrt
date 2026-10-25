@@ -1,0 +1,34 @@
+
+<project>/openwrt/bench/bin/isa-abi-soft-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+0001041c <bench_bits>:
+   1041c:	4785                	li	a5,1
+   1041e:	0af5f5b3          	maxu	a1,a1,a5
+   10422:	9e3787b7          	lui	a5,0x9e378
+   10426:	9b978793          	addi	a5,a5,-1607 # 9e3779b9 <__global_pointer$+0x9e3591b9>
+   1042a:	4601                	li	a2,0
+   1042c:	00d59693          	slli	a3,a1,0xd
+   10430:	8ead                	xor	a3,a3,a1
+   10432:	0116d713          	srli	a4,a3,0x11
+   10436:	8f35                	xor	a4,a4,a3
+   10438:	00571593          	slli	a1,a4,0x5
+   1043c:	8db9                	xor	a1,a1,a4
+   1043e:	0015e713          	ori	a4,a1,1
+   10442:	60071693          	clz	a3,a4
+   10446:	96be                	add	a3,a3,a5
+   10448:	60171713          	ctz	a4,a4
+   1044c:	6985d793          	rev8	a5,a1
+   10450:	8f35                	xor	a4,a4,a3
+   10452:	973e                	add	a4,a4,a5
+   10454:	0085d793          	srli	a5,a1,0x8
+   10458:	61975713          	rori	a4,a4,0x19
+   1045c:	28f017b3          	bset	a5,zero,a5
+   10460:	40f777b3          	andn	a5,a4,a5
+   10464:	0605                	addi	a2,a2,1
+   10466:	28b797b3          	bset	a5,a5,a1
+   1046a:	fcc511e3          	bne	a0,a2,1042c <bench_bits+0x10>
+   1046e:	00f5c533          	xor	a0,a1,a5
+   10472:	8082                	ret

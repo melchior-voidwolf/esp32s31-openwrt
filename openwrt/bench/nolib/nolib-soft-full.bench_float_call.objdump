@@ -1,0 +1,49 @@
+
+<project>/openwrt/bench/nolib/nolib-soft-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010280 <bench_float_call>:
+   10280:	000117b7          	lui	a5,0x11
+   10284:	0805c5b3          	zext.h	a1,a1
+   10288:	8087a687          	flw	fa3,-2040(a5) # 10808 <abi_float_step+0xc8>
+   1028c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10290:	000117b7          	lui	a5,0x11
+   10294:	80c7a707          	flw	fa4,-2036(a5) # 1080c <abi_float_step+0xcc>
+   10298:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1029c:	1101                	addi	sp,sp,-32
+   1029e:	ca26                	sw	s1,20(sp)
+   102a0:	ce06                	sw	ra,28(sp)
+   102a2:	84aa                	mv	s1,a0
+   102a4:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   102a8:	e0078553          	fmv.x.w	a0,fa5
+   102ac:	c4b1                	beqz	s1,102f8 <bench_float_call+0x78>
+   102ae:	00011737          	lui	a4,0x11
+   102b2:	000117b7          	lui	a5,0x11
+   102b6:	c84a                	sw	s2,16(sp)
+   102b8:	c64e                	sw	s3,12(sp)
+   102ba:	8107a903          	lw	s2,-2032(a5) # 10810 <abi_float_step+0xd0>
+   102be:	81472983          	lw	s3,-2028(a4) # 10814 <abi_float_step+0xd4>
+   102c2:	cc22                	sw	s0,24(sp)
+   102c4:	4401                	li	s0,0
+   102c6:	0001                	nop
+   102c8:	00000013          	nop
+   102cc:	00000013          	nop
+   102d0:	00000013          	nop
+   102d4:	00000013          	nop
+   102d8:	00000013          	nop
+   102dc:	00000013          	nop
+   102e0:	864e                	mv	a2,s3
+   102e2:	85ca                	mv	a1,s2
+   102e4:	0405                	addi	s0,s0,1
+   102e6:	00000097          	auipc	ra,0x0
+   102ea:	45a080e7          	jalr	1114(ra) # 10740 <abi_float_step>
+   102ee:	fe8499e3          	bne	s1,s0,102e0 <bench_float_call+0x60>
+   102f2:	4462                	lw	s0,24(sp)
+   102f4:	4942                	lw	s2,16(sp)
+   102f6:	49b2                	lw	s3,12(sp)
+   102f8:	40f2                	lw	ra,28(sp)
+   102fa:	44d2                	lw	s1,20(sp)
+   102fc:	6105                	addi	sp,sp,32
+   102fe:	8082                	ret

@@ -1,0 +1,198 @@
+
+=== soak-start ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1472 kB
+MemAvailable:       1256 kB
+Cached:             1932 kB
+SwapCached:          196 kB
+SwapFree:           3676 kB
+AnonPages:           712 kB
+SUnreclaim:         3152 kB
+ 1478656   477030  2052096        0  2875392        0     1335        0      240
+   15877        0  1800450    88501        0        0        0        0        0    74050    88501        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-60 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1040 kB
+MemAvailable:        972 kB
+Cached:             2240 kB
+SwapCached:          312 kB
+SwapFree:           3588 kB
+AnonPages:           616 kB
+SUnreclaim:         3164 kB
+ 1568768   511164  2146304        0  2875392        0     1335        0      240
+   15943        0  1807586    88794        0        0        0        0        0    74380    88794        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-120 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1404 kB
+MemAvailable:       1132 kB
+Cached:             1828 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           644 kB
+SUnreclaim:         3164 kB
+ 1544192   505235  2146304        0  2875392        0     1335        0      240
+   15947        0  1807862    88804        0        0        0        0        0    74410    88804        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-180 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1452 kB
+MemAvailable:       1148 kB
+Cached:             1772 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           644 kB
+SUnreclaim:         3168 kB
+ 1544192   505235  2146304        0  2875392        0     1335        0      240
+   15949        0  1807968    88809        0        0        0        0        0    74420    88809        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-240 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1464 kB
+MemAvailable:       1168 kB
+Cached:             1780 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           644 kB
+SUnreclaim:         3168 kB
+ 1544192   505235  2146304        0  2875392        0     1335        0      240
+   15949        0  1807968    88809        0        0        0        0        0    74420    88809        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-300 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1508 kB
+MemAvailable:       1196 kB
+Cached:             1744 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           640 kB
+SUnreclaim:         3172 kB
+ 1544192   505235  2146304        0  2875392        0     1335        0      240
+   15950        0  1808152    88815        0        0        0        0        0    74430    88815        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-360 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1492 kB
+MemAvailable:       1180 kB
+Cached:             1744 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           644 kB
+SUnreclaim:         3168 kB
+ 1544192   505235  2146304        0  2875392        0     1335        0      240
+   15950        0  1808152    88815        0        0        0        0        0    74430    88815        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-420 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1140 kB
+MemAvailable:       1036 kB
+Cached:             2180 kB
+SwapCached:          256 kB
+SwapFree:           3560 kB
+AnonPages:           600 kB
+SUnreclaim:         3172 kB
+ 1597440   524306  2154496        0  2875392        0     1335        0      240
+   15998        0  1813344    89008        0        0        0        0        0    74640    89008        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-480 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1148 kB
+MemAvailable:       1008 kB
+Cached:             2092 kB
+SwapCached:          312 kB
+SwapFree:           3612 kB
+AnonPages:           644 kB
+SUnreclaim:         3164 kB
+ 1544192   505251  2146304        0  2875392        0     1335        0      240
+   16056        0  1819488    89255        0        0        0        0        0    74920    89255        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== elapsed-540 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+768
+MemFree:            1220 kB
+MemAvailable:       1068 kB
+Cached:             2072 kB
+SwapCached:          300 kB
+SwapFree:           3576 kB
+AnonPages:           608 kB
+SUnreclaim:         3168 kB
+ 1581056   514925  2146304        0  2875392        0     1335        0      240
+   16113        0  1825486    89510        0        0        0        0        0    75110    89510        0        0        0        0        0        0
+root@esp32s31:~# 
+
+=== soak-restored-1024 ===
+cat /proc/sys/vm/min_free_kbytes; grep -E 'MemFree|MemAvailable
+
+|Cached|SwapFree|AnonPages|SUnreclaim' /proc/meminfo; cat /sys/block/zram0/mm_st
+
+at 2>/dev/null; cat /sys/block/mtdblock0/stat 2>/dev/null
+1024
+MemFree:            1428 kB
+MemAvailable:        840 kB
+Cached:             1960 kB
+SwapCached:          208 kB
+SwapFree:           3576 kB
+AnonPages:           608 kB
+SUnreclaim:         3168 kB
+ 1581056   514925  2146304        0  2875392        0     1335        0      240
+   16141        0  1828808    89631        0        0        0        0        0    75200    89631        0        0        0        0        0        0
+root@esp32s31:~# 

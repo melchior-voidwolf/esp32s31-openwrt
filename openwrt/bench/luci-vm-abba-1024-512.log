@@ -1,0 +1,57 @@
+login POST: HTTP 302 start=2.773s total=2.776s
+login redirect: /cgi-bin/luci/
+warmup req1: HTTP 200 start=2.792s total=4.161s
+warmup req2: HTTP 200 start=2.921s total=8.231s
+warmup req3: HTTP 200 start=4.808s total=5.725s
+warmup req4: HTTP 200 start=1.228s total=1.545s
+A1 req1: HTTP 200 start=2.752s total=3.512s
+A1 req2: HTTP 200 start=1.505s total=1.518s
+A1 req3: HTTP 200 start=0.285s total=0.295s
+A1 req4: HTTP 200 start=0.287s total=0.296s
+A1 req5: HTTP 200 start=0.285s total=0.297s
+A1 req6: HTTP 200 start=0.285s total=0.296s
+B1 req1: HTTP 200 start=1.552s total=1.946s
+B1 req2: HTTP 200 start=0.402s total=0.415s
+B1 req3: HTTP 200 start=0.313s total=0.324s
+B1 req4: HTTP 200 start=0.313s total=0.324s
+B1 req5: HTTP 200 start=0.311s total=0.320s
+B1 req6: HTTP 200 start=0.315s total=0.325s
+B2 req1: HTTP 200 start=0.335s total=0.347s
+B2 req2: HTTP 200 start=0.315s total=0.331s
+B2 req3: HTTP 200 start=0.312s total=0.324s
+B2 req4: HTTP 200 start=0.317s total=0.327s
+B2 req5: HTTP 200 start=0.311s total=0.322s
+B2 req6: HTTP 200 start=0.313s total=0.324s
+A2 req1: HTTP 200 start=1.327s total=2.796s
+A2 req2: HTTP 200 start=2.845s total=4.262s
+A2 req3: HTTP 200 start=1.773s total=2.255s
+A2 req4: HTTP 200 start=0.404s total=0.416s
+A2 req5: HTTP 200 start=0.301s total=0.320s
+A2 req6: HTTP 200 start=0.300s total=0.320s
+B3 req1: HTTP 200 start=0.341s total=0.357s
+B3 req2: HTTP 200 start=0.314s total=0.326s
+B3 req3: HTTP 200 start=0.302s total=0.321s
+B3 req4: HTTP 200 start=0.313s total=0.323s
+B3 req5: HTTP 200 start=0.314s total=0.324s
+B3 req6: HTTP 200 start=0.310s total=0.321s
+A3 req1: HTTP 200 start=2.656s total=3.216s
+A3 req2: HTTP 200 start=0.869s total=1.157s
+A3 req3: HTTP 200 start=0.308s total=0.320s
+A3 req4: HTTP 200 start=0.306s total=0.317s
+A3 req5: HTTP 200 start=0.299s total=0.318s
+A3 req6: HTTP 200 start=0.293s total=0.313s
+A4 req1: HTTP 200 start=2.462s total=3.260s
+A4 req2: HTTP 200 start=3.575s total=4.342s
+A4 req3: HTTP 200 start=1.743s total=2.212s
+A4 req4: HTTP 200 start=0.763s total=1.728s
+A4 req5: HTTP 200 start=0.947s total=0.967s
+A4 req6: HTTP 200 start=0.296s total=0.307s
+B4 req1: HTTP 200 start=1.743s total=2.070s
+B4 req2: HTTP 200 start=0.589s total=0.601s
+B4 req3: HTTP 200 start=0.287s total=0.305s
+B4 req4: HTTP 200 start=0.295s total=0.306s
+B4 req5: HTTP 200 start=0.297s total=0.309s
+B4 req6: HTTP 200 start=0.287s total=0.308s
+session destroyed: yes
+SUMMARY {"1024": {"max": 4.3418166560004465, "n": 24, "over_1s": 0.4583333333333333, "over_2s": 0.3333333333333333, "p50": 0.6913424649974331, "p95": 4.261896719006472}, "512": {"max": 2.070037270998, "n": 24, "over_1s": 0.08333333333333333, "over_2s": 0.041666666666666664, "p50": 0.32393879300070694, "p95": 1.9455414690019097}}
+results=/tmp/luci-vm-abba-run1.json snapshots=/tmp/luci-vm-abba-run1-snapshots.log

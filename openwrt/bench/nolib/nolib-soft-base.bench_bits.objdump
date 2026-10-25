@@ -1,0 +1,80 @@
+
+<project>/openwrt/bench/nolib/nolib-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010180 <bench_bits>:
+   10180:	e191                	bnez	a1,10184 <bench_bits+0x4>
+   10182:	4585                	li	a1,1
+   10184:	c561                	beqz	a0,1024c <bench_bits+0xcc>
+   10186:	1141                	addi	sp,sp,-16
+   10188:	9e3783b7          	lui	t2,0x9e378
+   1018c:	6341                	lui	t1,0x10
+   1018e:	c622                	sw	s0,12(sp)
+   10190:	9b938393          	addi	t2,t2,-1607 # 9e3779b9 <__global_pointer$+0x9e3661b9>
+   10194:	f0030313          	addi	t1,t1,-256 # ff00 <_start-0x1c0>
+   10198:	4801                	li	a6,0
+   1019a:	62c1                	lui	t0,0x10
+   1019c:	01000fb7          	lui	t6,0x1000
+   101a0:	10000f37          	lui	t5,0x10000
+   101a4:	40000eb7          	lui	t4,0x40000
+   101a8:	00ff0e37          	lui	t3,0xff0
+   101ac:	4885                	li	a7,1
+   101ae:	0001                	nop
+   101b0:	00000013          	nop
+   101b4:	00000013          	nop
+   101b8:	00000013          	nop
+   101bc:	00000013          	nop
+   101c0:	00d59713          	slli	a4,a1,0xd
+   101c4:	8f2d                	xor	a4,a4,a1
+   101c6:	01175793          	srli	a5,a4,0x11
+   101ca:	8fb9                	xor	a5,a5,a4
+   101cc:	00579593          	slli	a1,a5,0x5
+   101d0:	8dbd                	xor	a1,a1,a5
+   101d2:	0085d713          	srli	a4,a1,0x8
+   101d6:	0185d693          	srli	a3,a1,0x18
+   101da:	01859793          	slli	a5,a1,0x18
+   101de:	00677633          	and	a2,a4,t1
+   101e2:	8fd5                	or	a5,a5,a3
+   101e4:	00859693          	slli	a3,a1,0x8
+   101e8:	8fd1                	or	a5,a5,a2
+   101ea:	01c6f6b3          	and	a3,a3,t3
+   101ee:	00e89733          	sll	a4,a7,a4
+   101f2:	8fd5                	or	a5,a5,a3
+   101f4:	fff74693          	not	a3,a4
+   101f8:	0015e713          	ori	a4,a1,1
+   101fc:	00b89433          	sll	s0,a7,a1
+   10200:	0805                	addi	a6,a6,1
+   10202:	4601                	li	a2,0
+   10204:	00577463          	bgeu	a4,t0,1020c <bench_bits+0x8c>
+   10208:	0742                	slli	a4,a4,0x10
+   1020a:	4641                	li	a2,16
+   1020c:	01f77463          	bgeu	a4,t6,10214 <bench_bits+0x94>
+   10210:	0621                	addi	a2,a2,8
+   10212:	0722                	slli	a4,a4,0x8
+   10214:	01e77463          	bgeu	a4,t5,1021c <bench_bits+0x9c>
+   10218:	0611                	addi	a2,a2,4
+   1021a:	0712                	slli	a4,a4,0x4
+   1021c:	01d77463          	bgeu	a4,t4,10224 <bench_bits+0xa4>
+   10220:	0609                	addi	a2,a2,2
+   10222:	070a                	slli	a4,a4,0x2
+   10224:	fff74713          	not	a4,a4
+   10228:	837d                	srli	a4,a4,0x1f
+   1022a:	963a                	add	a2,a2,a4
+   1022c:	97b2                	add	a5,a5,a2
+   1022e:	979e                	add	a5,a5,t2
+   10230:	0197d713          	srli	a4,a5,0x19
+   10234:	079e                	slli	a5,a5,0x7
+   10236:	8fd9                	or	a5,a5,a4
+   10238:	8efd                	and	a3,a3,a5
+   1023a:	00d463b3          	or	t2,s0,a3
+   1023e:	f90511e3          	bne	a0,a6,101c0 <bench_bits+0x40>
+   10242:	4432                	lw	s0,12(sp)
+   10244:	00b3c533          	xor	a0,t2,a1
+   10248:	0141                	addi	sp,sp,16
+   1024a:	8082                	ret
+   1024c:	9e3783b7          	lui	t2,0x9e378
+   10250:	9b938393          	addi	t2,t2,-1607 # 9e3779b9 <__global_pointer$+0x9e3661b9>
+   10254:	00b3c533          	xor	a0,t2,a1
+   10258:	8082                	ret

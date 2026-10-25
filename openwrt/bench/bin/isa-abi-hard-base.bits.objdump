@@ -1,0 +1,64 @@
+
+<project>/openwrt/bench/bin/isa-abi-hard-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010396 <bench_bits>:
+   10396:	1101                	addi	sp,sp,-32
+   10398:	cc22                	sw	s0,24(sp)
+   1039a:	ca26                	sw	s1,20(sp)
+   1039c:	ce06                	sw	ra,28(sp)
+   1039e:	c84a                	sw	s2,16(sp)
+   103a0:	c64e                	sw	s3,12(sp)
+   103a2:	c452                	sw	s4,8(sp)
+   103a4:	c256                	sw	s5,4(sp)
+   103a6:	c05a                	sw	s6,0(sp)
+   103a8:	84aa                	mv	s1,a0
+   103aa:	4405                	li	s0,1
+   103ac:	c191                	beqz	a1,103b0 <bench_bits+0x1a>
+   103ae:	842e                	mv	s0,a1
+   103b0:	9e378937          	lui	s2,0x9e378
+   103b4:	9b990913          	addi	s2,s2,-1607 # 9e3779b9 <__global_pointer$+0x9e35c1b9>
+   103b8:	4a01                	li	s4,0
+   103ba:	4b05                	li	s6,1
+   103bc:	00d41713          	slli	a4,s0,0xd
+   103c0:	8f21                	xor	a4,a4,s0
+   103c2:	01175793          	srli	a5,a4,0x11
+   103c6:	8fb9                	xor	a5,a5,a4
+   103c8:	00579413          	slli	s0,a5,0x5
+   103cc:	8c3d                	xor	s0,s0,a5
+   103ce:	00146a93          	ori	s5,s0,1
+   103d2:	8556                	mv	a0,s5
+   103d4:	2421                	jal	105dc <__clzsi2>
+   103d6:	89aa                	mv	s3,a0
+   103d8:	8556                	mv	a0,s5
+   103da:	2c3d                	jal	10618 <__ctzsi2>
+   103dc:	99ca                	add	s3,s3,s2
+   103de:	892a                	mv	s2,a0
+   103e0:	8522                	mv	a0,s0
+   103e2:	2c8d                	jal	10654 <__bswapsi2>
+   103e4:	01394933          	xor	s2,s2,s3
+   103e8:	012507b3          	add	a5,a0,s2
+   103ec:	00845713          	srli	a4,s0,0x8
+   103f0:	0197d693          	srli	a3,a5,0x19
+   103f4:	00eb1733          	sll	a4,s6,a4
+   103f8:	079e                	slli	a5,a5,0x7
+   103fa:	8fd5                	or	a5,a5,a3
+   103fc:	fff74713          	not	a4,a4
+   10400:	8ff9                	and	a5,a5,a4
+   10402:	008b1933          	sll	s2,s6,s0
+   10406:	0a05                	addi	s4,s4,1
+   10408:	00f96933          	or	s2,s2,a5
+   1040c:	fb4498e3          	bne	s1,s4,103bc <bench_bits+0x26>
+   10410:	01244533          	xor	a0,s0,s2
+   10414:	40f2                	lw	ra,28(sp)
+   10416:	4462                	lw	s0,24(sp)
+   10418:	44d2                	lw	s1,20(sp)
+   1041a:	4942                	lw	s2,16(sp)
+   1041c:	49b2                	lw	s3,12(sp)
+   1041e:	4a22                	lw	s4,8(sp)
+   10420:	4a92                	lw	s5,4(sp)
+   10422:	4b02                	lw	s6,0(sp)
+   10424:	6105                	addi	sp,sp,32
+   10426:	8082                	ret

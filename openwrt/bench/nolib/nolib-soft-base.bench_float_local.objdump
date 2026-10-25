@@ -1,0 +1,33 @@
+
+<project>/openwrt/bench/nolib/nolib-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010100 <bench_float_local>:
+   10100:	05c2                	slli	a1,a1,0x10
+   10102:	000117b7          	lui	a5,0x11
+   10106:	81c1                	srli	a1,a1,0x10
+   10108:	8887a687          	flw	fa3,-1912(a5) # 10888 <abi_float_step+0xc8>
+   1010c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10110:	000117b7          	lui	a5,0x11
+   10114:	88c7a707          	flw	fa4,-1908(a5) # 1088c <abi_float_step+0xcc>
+   10118:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1011c:	872a                	mv	a4,a0
+   1011e:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10122:	e0078553          	fmv.x.w	a0,fa5
+   10126:	cb05                	beqz	a4,10156 <bench_float_local+0x56>
+   10128:	000116b7          	lui	a3,0x11
+   1012c:	8906a687          	flw	fa3,-1904(a3) # 10890 <abi_float_step+0xd0>
+   10130:	000117b7          	lui	a5,0x11
+   10134:	8947a707          	flw	fa4,-1900(a5) # 10894 <abi_float_step+0xd4>
+   10138:	4781                	li	a5,0
+   1013a:	0001                	nop
+   1013c:	00000013          	nop
+   10140:	f00507d3          	fmv.w.x	fa5,a0
+   10144:	0785                	addi	a5,a5,1
+   10146:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1014a:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   1014e:	e0078553          	fmv.x.w	a0,fa5
+   10152:	fef717e3          	bne	a4,a5,10140 <bench_float_local+0x40>
+   10156:	8082                	ret

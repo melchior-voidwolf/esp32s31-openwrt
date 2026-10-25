@@ -1,0 +1,31 @@
+
+<project>/openwrt/bench/nolib/nolib-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010280 <bench_zba>:
+   10280:	a5a5a6b7          	lui	a3,0xa5a5a
+   10284:	5a5a67b7          	lui	a5,0x5a5a6
+   10288:	5a568693          	addi	a3,a3,1445 # a5a5a5a5 <__global_pointer$+0xa5a48da5>
+   1028c:	a5a78793          	addi	a5,a5,-1446 # 5a5a5a5a <__global_pointer$+0x5a59425a>
+   10290:	00d5c733          	xor	a4,a1,a3
+   10294:	8fad                	xor	a5,a5,a1
+   10296:	c115                	beqz	a0,102ba <bench_zba+0x3a>
+   10298:	4681                	li	a3,0
+   1029a:	0001                	nop
+   1029c:	00000013          	nop
+   102a0:	0706                	slli	a4,a4,0x1
+   102a2:	972e                	add	a4,a4,a1
+   102a4:	078a                	slli	a5,a5,0x2
+   102a6:	97ba                	add	a5,a5,a4
+   102a8:	058e                	slli	a1,a1,0x3
+   102aa:	0685                	addi	a3,a3,1
+   102ac:	95be                	add	a1,a1,a5
+   102ae:	fed519e3          	bne	a0,a3,102a0 <bench_zba+0x20>
+   102b2:	00b74533          	xor	a0,a4,a1
+   102b6:	8d3d                	xor	a0,a0,a5
+   102b8:	8082                	ret
+   102ba:	8536                	mv	a0,a3
+   102bc:	8d3d                	xor	a0,a0,a5
+   102be:	8082                	ret

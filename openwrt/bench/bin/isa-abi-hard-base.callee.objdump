@@ -1,0 +1,10 @@
+
+<project>/openwrt/bench/bin/isa-abi-hard-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+000105d2 <abi_float_step>:
+   105d2:	10b57553          	fmul.s	fa0,fa0,fa1
+   105d6:	00c57553          	fadd.s	fa0,fa0,fa2
+   105da:	8082                	ret

@@ -1,0 +1,23 @@
+
+<project>/openwrt/bench/nolib/nolib-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+000101c0 <bench_int_control>:
+   101c0:	86aa                	mv	a3,a0
+   101c2:	852e                	mv	a0,a1
+   101c4:	c695                	beqz	a3,101f0 <bench_int_control+0x30>
+   101c6:	001965b7          	lui	a1,0x196
+   101ca:	3c6ef637          	lui	a2,0x3c6ef
+   101ce:	60d58593          	addi	a1,a1,1549 # 19660d <__global_pointer$+0x184e0d>
+   101d2:	35f60613          	addi	a2,a2,863 # 3c6ef35f <__global_pointer$+0x3c6ddb5f>
+   101d6:	4781                	li	a5,0
+   101d8:	00000013          	nop
+   101dc:	00000013          	nop
+   101e0:	02b50533          	mul	a0,a0,a1
+   101e4:	00c7c733          	xor	a4,a5,a2
+   101e8:	0785                	addi	a5,a5,1
+   101ea:	953a                	add	a0,a0,a4
+   101ec:	fef69ae3          	bne	a3,a5,101e0 <bench_int_control+0x20>
+   101f0:	8082                	ret

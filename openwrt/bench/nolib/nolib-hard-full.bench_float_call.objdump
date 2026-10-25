@@ -1,0 +1,51 @@
+
+<project>/openwrt/bench/nolib/nolib-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010280 <bench_float_call>:
+   10280:	000117b7          	lui	a5,0x11
+   10284:	0805c5b3          	zext.h	a1,a1
+   10288:	8487a687          	flw	fa3,-1976(a5) # 10848 <abi_float_step+0xc8>
+   1028c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10290:	000117b7          	lui	a5,0x11
+   10294:	84c7a707          	flw	fa4,-1972(a5) # 1084c <abi_float_step+0xcc>
+   10298:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1029c:	1101                	addi	sp,sp,-32
+   1029e:	ca26                	sw	s1,20(sp)
+   102a0:	ce06                	sw	ra,28(sp)
+   102a2:	84aa                	mv	s1,a0
+   102a4:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   102a8:	e0078553          	fmv.x.w	a0,fa5
+   102ac:	cca1                	beqz	s1,10304 <bench_float_call+0x84>
+   102ae:	00011737          	lui	a4,0x11
+   102b2:	000117b7          	lui	a5,0x11
+   102b6:	e622                	fsw	fs0,12(sp)
+   102b8:	e426                	fsw	fs1,8(sp)
+   102ba:	8507a407          	flw	fs0,-1968(a5) # 10850 <abi_float_step+0xd0>
+   102be:	85472487          	flw	fs1,-1964(a4) # 10854 <abi_float_step+0xd4>
+   102c2:	cc22                	sw	s0,24(sp)
+   102c4:	4401                	li	s0,0
+   102c6:	0001                	nop
+   102c8:	00000013          	nop
+   102cc:	00000013          	nop
+   102d0:	00000013          	nop
+   102d4:	00000013          	nop
+   102d8:	00000013          	nop
+   102dc:	00000013          	nop
+   102e0:	f0050553          	fmv.w.x	fa0,a0
+   102e4:	20948653          	fmv.s	fa2,fs1
+   102e8:	208405d3          	fmv.s	fa1,fs0
+   102ec:	0405                	addi	s0,s0,1
+   102ee:	00000097          	auipc	ra,0x0
+   102f2:	492080e7          	jalr	1170(ra) # 10780 <abi_float_step>
+   102f6:	e0050553          	fmv.x.w	a0,fa0
+   102fa:	fe8493e3          	bne	s1,s0,102e0 <bench_float_call+0x60>
+   102fe:	4462                	lw	s0,24(sp)
+   10300:	6432                	flw	fs0,12(sp)
+   10302:	64a2                	flw	fs1,8(sp)
+   10304:	40f2                	lw	ra,28(sp)
+   10306:	44d2                	lw	s1,20(sp)
+   10308:	6105                	addi	sp,sp,32
+   1030a:	8082                	ret

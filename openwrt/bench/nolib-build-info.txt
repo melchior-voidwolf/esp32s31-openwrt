@@ -1,0 +1,2 @@
+riscv32-openwrt-linux-musl
+14.3.0

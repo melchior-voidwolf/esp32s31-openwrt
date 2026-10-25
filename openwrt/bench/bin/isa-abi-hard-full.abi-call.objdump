@@ -1,0 +1,39 @@
+
+<project>/openwrt/bench/bin/isa-abi-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+000102e8 <bench_abi_call>:
+   102e8:	0805c5b3          	zext.h	a1,a1
+   102ec:	9401a687          	flw	fa3,-1728(gp) # 1b140 <__SDATA_BEGIN__+0x20>
+   102f0:	d005f7d3          	fcvt.s.w	fa5,a1
+   102f4:	9441a707          	flw	fa4,-1724(gp) # 1b144 <__SDATA_BEGIN__+0x24>
+   102f8:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   102fc:	1101                	addi	sp,sp,-32
+   102fe:	e622                	fsw	fs0,12(sp)
+   10300:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10304:	9481a407          	flw	fs0,-1720(gp) # 1b148 <__SDATA_BEGIN__+0x28>
+   10308:	e426                	fsw	fs1,8(sp)
+   1030a:	94c1a487          	flw	fs1,-1716(gp) # 1b14c <__SDATA_BEGIN__+0x2c>
+   1030e:	cc22                	sw	s0,24(sp)
+   10310:	e00787d3          	fmv.x.w	a5,fa5
+   10314:	ca26                	sw	s1,20(sp)
+   10316:	ce06                	sw	ra,28(sp)
+   10318:	84aa                	mv	s1,a0
+   1031a:	4401                	li	s0,0
+   1031c:	f0078553          	fmv.w.x	fa0,a5
+   10320:	20948653          	fmv.s	fa2,fs1
+   10324:	208405d3          	fmv.s	fa1,fs0
+   10328:	0405                	addi	s0,s0,1
+   1032a:	24b5                	jal	10596 <abi_float_step>
+   1032c:	e00507d3          	fmv.x.w	a5,fa0
+   10330:	fe8496e3          	bne	s1,s0,1031c <bench_abi_call+0x34>
+   10334:	40f2                	lw	ra,28(sp)
+   10336:	4462                	lw	s0,24(sp)
+   10338:	44d2                	lw	s1,20(sp)
+   1033a:	6432                	flw	fs0,12(sp)
+   1033c:	64a2                	flw	fs1,8(sp)
+   1033e:	853e                	mv	a0,a5
+   10340:	6105                	addi	sp,sp,32
+   10342:	8082                	ret

@@ -1,0 +1,10 @@
+
+<project>/openwrt/bench/nolib/nolib-hard-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010800 <abi_float_step>:
+   10800:	10b57553          	fmul.s	fa0,fa0,fa1
+   10804:	00c57553          	fadd.s	fa0,fa0,fa2
+   10808:	8082                	ret

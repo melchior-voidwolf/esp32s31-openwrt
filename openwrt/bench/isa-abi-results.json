@@ -1,0 +1,267 @@
+{
+  "modes": {
+    "float": {
+      "soft-base": {
+        "n": 3,
+        "median": 0.104693,
+        "min": 0.044076,
+        "max": 0.122416,
+        "samples": [
+          0.044076,
+          0.104693,
+          0.122416
+        ]
+      },
+      "hard-base": {
+        "n": 3,
+        "median": 0.074558,
+        "min": 0.045945,
+        "max": 0.104743,
+        "samples": [
+          0.045945,
+          0.104743,
+          0.074558
+        ]
+      },
+      "soft-full": {
+        "n": 3,
+        "median": 0.100665,
+        "min": 0.044781,
+        "max": 0.125551,
+        "samples": [
+          0.100665,
+          0.044781,
+          0.125551
+        ]
+      },
+      "hard-full": {
+        "n": 3,
+        "median": 0.075324,
+        "min": 0.044416,
+        "max": 0.084712,
+        "samples": [
+          0.075324,
+          0.044416,
+          0.084712
+        ]
+      }
+    },
+    "abi-call": {
+      "soft-base": {
+        "n": 3,
+        "median": 0.13868,
+        "min": 0.067869,
+        "max": 0.141036,
+        "samples": [
+          0.067869,
+          0.141036,
+          0.13868
+        ]
+      },
+      "hard-base": {
+        "n": 3,
+        "median": 0.091224,
+        "min": 0.052187,
+        "max": 0.122042,
+        "samples": [
+          0.052187,
+          0.091224,
+          0.122042
+        ]
+      },
+      "soft-full": {
+        "n": 3,
+        "median": 0.135243,
+        "min": 0.067915,
+        "max": 0.1592,
+        "samples": [
+          0.135243,
+          0.067915,
+          0.1592
+        ]
+      },
+      "hard-full": {
+        "n": 3,
+        "median": 0.101311,
+        "min": 0.050844,
+        "max": 0.114052,
+        "samples": [
+          0.114052,
+          0.050844,
+          0.101311
+        ]
+      }
+    },
+    "sqrt": {
+      "soft-base": {
+        "n": 3,
+        "median": 0.976352,
+        "min": 0.449689,
+        "max": 1.015914,
+        "samples": [
+          0.449689,
+          0.976352,
+          1.015914
+        ]
+      },
+      "hard-base": {
+        "n": 3,
+        "median": 0.243282,
+        "min": 0.108307,
+        "max": 0.26518,
+        "samples": [
+          0.108307,
+          0.26518,
+          0.243282
+        ]
+      },
+      "soft-full": {
+        "n": 3,
+        "median": 0.966608,
+        "min": 0.516402,
+        "max": 1.005514,
+        "samples": [
+          1.005514,
+          0.516402,
+          0.966608
+        ]
+      },
+      "hard-full": {
+        "n": 3,
+        "median": 0.128554,
+        "min": 0.108303,
+        "max": 0.226364,
+        "samples": [
+          0.128554,
+          0.108303,
+          0.226364
+        ]
+      }
+    },
+    "double": {
+      "soft-base": {
+        "n": 3,
+        "median": 1.629766,
+        "min": 0.889986,
+        "max": 1.952646,
+        "samples": [
+          0.889986,
+          1.629766,
+          1.952646
+        ]
+      },
+      "hard-base": {
+        "n": 3,
+        "median": 2.156203,
+        "min": 1.255758,
+        "max": 2.567173,
+        "samples": [
+          1.255758,
+          2.567173,
+          2.156203
+        ]
+      },
+      "soft-full": {
+        "n": 3,
+        "median": 1.880843,
+        "min": 1.600406,
+        "max": 2.00203,
+        "samples": [
+          2.00203,
+          1.880843,
+          1.600406
+        ]
+      },
+      "hard-full": {
+        "n": 3,
+        "median": 1.162034,
+        "min": 1.159126,
+        "max": 1.79241,
+        "samples": [
+          1.162034,
+          1.159126,
+          1.79241
+        ]
+      }
+    },
+    "bits": {
+      "soft-base": {
+        "n": 3,
+        "median": 0.406507,
+        "min": 0.211501,
+        "max": 0.445239,
+        "samples": [
+          0.211501,
+          0.406507,
+          0.445239
+        ]
+      },
+      "hard-base": {
+        "n": 3,
+        "median": 0.482248,
+        "min": 0.480737,
+        "max": 0.64899,
+        "samples": [
+          0.480737,
+          0.482248,
+          0.64899
+        ]
+      },
+      "soft-full": {
+        "n": 3,
+        "median": 0.143958,
+        "min": 0.136245,
+        "max": 0.149752,
+        "samples": [
+          0.143958,
+          0.136245,
+          0.149752
+        ]
+      },
+      "hard-full": {
+        "n": 3,
+        "median": 0.067756,
+        "min": 0.067567,
+        "max": 0.067772,
+        "samples": [
+          0.067567,
+          0.067756,
+          0.067772
+        ]
+      }
+    }
+  },
+  "speedups": {
+    "float": {
+      "ABI base: soft-base / hard-base": 1.4041819791303414,
+      "ABI full: soft-full / hard-full": 1.336426636928469,
+      "ISA soft: soft-base / soft-full": 1.040013907515025,
+      "ISA hard: hard-base / hard-full": 0.9898305984812277
+    },
+    "abi-call": {
+      "ABI base: soft-base / hard-base": 1.5202139787775146,
+      "ABI full: soft-full / hard-full": 1.33492907976429,
+      "ISA soft: soft-base / soft-full": 1.0254135149323809,
+      "ISA hard: hard-base / hard-full": 0.9004352933047745
+    },
+    "sqrt": {
+      "ABI base: soft-base / hard-base": 4.013252110719248,
+      "ABI full: soft-full / hard-full": 7.5190814754889,
+      "ISA soft: soft-base / soft-full": 1.0100806117888534,
+      "ISA hard: hard-base / hard-full": 1.892449865426202
+    },
+    "double": {
+      "ABI base: soft-base / hard-base": 0.7558499825851276,
+      "ABI full: soft-full / hard-full": 1.618578286005401,
+      "ISA soft: soft-base / soft-full": 0.8665082625184558,
+      "ISA hard: hard-base / hard-full": 1.8555420925721624
+    },
+    "bits": {
+      "ABI base: soft-base / hard-base": 0.8429418058758149,
+      "ABI full: soft-full / hard-full": 2.1246531672471813,
+      "ISA soft: soft-base / soft-full": 2.8237888828686146,
+      "ISA hard: hard-base / hard-full": 7.117421335379893
+    }
+  },
+  "checksums_ok": true
+}

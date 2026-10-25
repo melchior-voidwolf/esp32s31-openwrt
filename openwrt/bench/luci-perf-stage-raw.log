@@ -1,0 +1,11 @@
+root@esp32s31:~# logread | grep S31PERF | tail -4
+Sun Oct 25 02:27:38 2026 kern.info dispatcher.uc: S31PERF / total=2202997us version_lang=359175us runtime=195540us menu=174634us resolve=207463us login_redirect=1266182us
+Sun Oct 25 02:27:45 2026 user.info : S31PERF /admin/status/overview total=2410965us version_lang=345041us runtime=174376us menu=93169us resolve=41331us auth=27214us pre_action=1002us action_begin=197us action=1728633us
+Sun Oct 25 02:27:50 2026 user.info : S31PERF /admin/status/overview total=3125985us version_lang=231749us runtime=476622us menu=183318us resolve=213207us auth=26917us pre_action=884us action_begin=214us action=1993070us
+Sun Oct 25 02:27:56 2026 user.info : S31PERF /admin/status/overview total=4347661us version_lang=176430us runtime=85121us menu=155328us resolve=226755us auth=26185us pre_action=940us action_begin=235us action=3676663us
+Sun Oct 25 02:28:01 2026 user.info : S31PERF /admin/status/overview total=2760864us version_lang=537430us runtime=517657us menu=173417us resolve=223830us auth=26765us pre_action=878us action_begin=210us action=1280673us
+Sun Oct 25 02:28:09 2026 user.info : S31PERF /admin/status/overview total=5811435us version_lang=174697us runtime=85647us menu=196929us resolve=213712us auth=26018us pre_action=885us action_begin=214us action=5113329us
+Sun Oct 25 02:28:14 2026 user.info : S31PERF /admin/status/overview total=2878047us version_lang=274887us runtime=87272us menu=171584us resolve=395551us auth=39203us pre_action=1065us action_begin=246us action=1908235us
+Sun Oct 25 02:28:35 2026 user.info : S31PERF /admin/status/overview total=19563388us version_lang=272400us runtime=147847us menu=1522317us resolve=1689259us auth=25777us pre_action=1095us action_begin=228us action=15904461us
+Sun Oct 25 02:28:43 2026 user.info : S31PERF /admin/status/overview total=5267797us version_lang=180415us runtime=373367us menu=169045us resolve=223380us auth=26848us pre_action=960us action_begin=206us action=4293572us
+Sun Oct 25 02:28:48 2026 user.info : S31PERF /admin/status/overview total=2857082us version_lang=585272us runtime=428930us menu=183103us resolve=294630us auth=45435us pre_action=1119us action_begin=226us action=1318363us

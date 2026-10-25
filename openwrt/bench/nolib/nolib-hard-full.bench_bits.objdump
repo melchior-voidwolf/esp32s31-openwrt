@@ -1,0 +1,39 @@
+
+<project>/openwrt/bench/nolib/nolib-hard-full:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010200 <bench_bits>:
+   10200:	4785                	li	a5,1
+   10202:	0af5f5b3          	maxu	a1,a1,a5
+   10206:	9e3787b7          	lui	a5,0x9e378
+   1020a:	9b978793          	addi	a5,a5,-1607 # 9e3779b9 <__global_pointer$+0x9e3661b9>
+   1020e:	c931                	beqz	a0,10262 <bench_bits+0x62>
+   10210:	4601                	li	a2,0
+   10212:	0001                	nop
+   10214:	00000013          	nop
+   10218:	00000013          	nop
+   1021c:	00000013          	nop
+   10220:	00d59693          	slli	a3,a1,0xd
+   10224:	8ead                	xor	a3,a3,a1
+   10226:	0116d713          	srli	a4,a3,0x11
+   1022a:	8f35                	xor	a4,a4,a3
+   1022c:	00571593          	slli	a1,a4,0x5
+   10230:	8db9                	xor	a1,a1,a4
+   10232:	0015e713          	ori	a4,a1,1
+   10236:	60071693          	clz	a3,a4
+   1023a:	96be                	add	a3,a3,a5
+   1023c:	60171713          	ctz	a4,a4
+   10240:	6985d793          	rev8	a5,a1
+   10244:	8f35                	xor	a4,a4,a3
+   10246:	973e                	add	a4,a4,a5
+   10248:	0085d793          	srli	a5,a1,0x8
+   1024c:	61975713          	rori	a4,a4,0x19
+   10250:	28f017b3          	bset	a5,zero,a5
+   10254:	40f777b3          	andn	a5,a4,a5
+   10258:	0605                	addi	a2,a2,1
+   1025a:	28b797b3          	bset	a5,a5,a1
+   1025e:	fcc511e3          	bne	a0,a2,10220 <bench_bits+0x20>
+   10262:	00f5c533          	xor	a0,a1,a5
+   10266:	8082                	ret

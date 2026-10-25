@@ -1,0 +1,45 @@
+# Authoritative .config fragment for the korvo1 OpenWrt rootfs.
+# Usage: cp fragment -> openwrt/openwrt/.config && make defconfig
+# (tools/owrt-build.sh does this; keep in sync with target/linux/esp32s31/Makefile)
+CONFIG_TARGET_esp32s31=y
+CONFIG_TARGET_esp32s31_korvo1=y
+
+# rootfs outputs we actually consume:
+#  - rootfs.tar.gz : exploded onto SD p2 by tools/mk-openwrt-sd.sh
+#  - rootfs.ext4   : alternative dd-able image
+# CONFIG_TARGET_ROOTFS_TARGZ is not set (combined semantics; root.targz copied manually)
+# CONFIG_TARGET_EXT4FS is not set (same; mksquashfs/dd manual)
+
+# rv32 musl has no 32-bit time syscalls (64-bit time_t only) — busybox 1.37
+# hwclock's raw SYS_settimeofday does not compile.  Time comes from NTP.
+CONFIG_BUSYBOX_CUSTOM=y
+# CONFIG_BUSYBOX_CONFIG_HWCLOCK is not set
+
+# softAP: netifd drives WiFi via wpad (hostapd+wpa_supplicant combined).
+# mbedtls variant = smallest.  Pulls hostapd-common.
+CONFIG_PACKAGE_wpad-basic-mbedtls=y
+CONFIG_PACKAGE_hostapd-common=y
+
+# ---- extreme-slim pass (2026-10-24): target = smallest 16MB firmware ----
+# compressed self-extracting kernel (4.03MB -> ~2MB)
+CONFIG_KERNEL_GZIP=y
+# no SSH: serial console is the management path (re-add if ever needed)
+# CONFIG_PACKAGE_dropbear is not set
+# read-only squashfs firmware needs no package manager (untested vs
+# base-files deps — drop if the build complains)
+# CONFIG_PACKAGE_apk-mbedtls is not set
+# no ipv6 anywhere (kernel-side CONFIG_IPV6 stays off in linux.config)
+# CONFIG_PACKAGE_ipv6helper is not set
+
+# minimal LuCI: light collection, one theme, no apps
+CONFIG_PACKAGE_luci-light=y
+CONFIG_PACKAGE_luci-theme-bootstrap=y
+CONFIG_PACKAGE_uhttpd-mod-ucode=y
+# CONFIG_PACKAGE_luci-theme-retention is not set
+# luci-light selects uhttpd; mod-ucode avoids per-request CGI fork/exec.
+
+CONFIG_TARGET_ROOTFS_SQUASHFS=y
+
+# RAM cushion, user-approved: zram-only compressed swap (2-4MB), swappiness
+# low.  NEVER sd/flash swap on this board: MSPI churn crashes hart0 (5x).
+CONFIG_PACKAGE_zram-swap=y

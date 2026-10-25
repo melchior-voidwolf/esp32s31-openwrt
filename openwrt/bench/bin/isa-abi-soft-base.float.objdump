@@ -1,0 +1,26 @@
+
+<project>/openwrt/bench/bin/isa-abi-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+000102d0 <bench_float>:
+   102d0:	05c2                	slli	a1,a1,0x10
+   102d2:	81c1                	srli	a1,a1,0x10
+   102d4:	9601a707          	flw	fa4,-1696(gp) # 1e160 <__SDATA_BEGIN__+0x20>
+   102d8:	d005f7d3          	fcvt.s.w	fa5,a1
+   102dc:	9641a607          	flw	fa2,-1692(gp) # 1e164 <__SDATA_BEGIN__+0x24>
+   102e0:	10e7f7d3          	fmul.s	fa5,fa5,fa4
+   102e4:	96c1a707          	flw	fa4,-1684(gp) # 1e16c <__SDATA_BEGIN__+0x2c>
+   102e8:	9681a687          	flw	fa3,-1688(gp) # 1e168 <__SDATA_BEGIN__+0x28>
+   102ec:	00c7f7d3          	fadd.s	fa5,fa5,fa2
+   102f0:	4701                	li	a4,0
+   102f2:	e00787d3          	fmv.x.w	a5,fa5
+   102f6:	f00787d3          	fmv.w.x	fa5,a5
+   102fa:	0705                	addi	a4,a4,1
+   102fc:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   10300:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10304:	e00787d3          	fmv.x.w	a5,fa5
+   10308:	fee517e3          	bne	a0,a4,102f6 <bench_float+0x26>
+   1030c:	853e                	mv	a0,a5
+   1030e:	8082                	ret

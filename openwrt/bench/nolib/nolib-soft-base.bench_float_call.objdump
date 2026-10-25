@@ -1,0 +1,50 @@
+
+<project>/openwrt/bench/nolib/nolib-soft-base:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010300 <bench_float_call>:
+   10300:	05c2                	slli	a1,a1,0x10
+   10302:	000117b7          	lui	a5,0x11
+   10306:	81c1                	srli	a1,a1,0x10
+   10308:	8887a687          	flw	fa3,-1912(a5) # 10888 <abi_float_step+0xc8>
+   1030c:	d005f7d3          	fcvt.s.w	fa5,a1
+   10310:	000117b7          	lui	a5,0x11
+   10314:	88c7a707          	flw	fa4,-1908(a5) # 1088c <abi_float_step+0xcc>
+   10318:	10d7f7d3          	fmul.s	fa5,fa5,fa3
+   1031c:	1101                	addi	sp,sp,-32
+   1031e:	ca26                	sw	s1,20(sp)
+   10320:	ce06                	sw	ra,28(sp)
+   10322:	84aa                	mv	s1,a0
+   10324:	00e7f7d3          	fadd.s	fa5,fa5,fa4
+   10328:	e0078553          	fmv.x.w	a0,fa5
+   1032c:	c4b1                	beqz	s1,10378 <bench_float_call+0x78>
+   1032e:	00011737          	lui	a4,0x11
+   10332:	000117b7          	lui	a5,0x11
+   10336:	c84a                	sw	s2,16(sp)
+   10338:	c64e                	sw	s3,12(sp)
+   1033a:	8907a903          	lw	s2,-1904(a5) # 10890 <abi_float_step+0xd0>
+   1033e:	89472983          	lw	s3,-1900(a4) # 10894 <abi_float_step+0xd4>
+   10342:	cc22                	sw	s0,24(sp)
+   10344:	4401                	li	s0,0
+   10346:	0001                	nop
+   10348:	00000013          	nop
+   1034c:	00000013          	nop
+   10350:	00000013          	nop
+   10354:	00000013          	nop
+   10358:	00000013          	nop
+   1035c:	00000013          	nop
+   10360:	864e                	mv	a2,s3
+   10362:	85ca                	mv	a1,s2
+   10364:	0405                	addi	s0,s0,1
+   10366:	00000097          	auipc	ra,0x0
+   1036a:	45a080e7          	jalr	1114(ra) # 107c0 <abi_float_step>
+   1036e:	fe8499e3          	bne	s1,s0,10360 <bench_float_call+0x60>
+   10372:	4462                	lw	s0,24(sp)
+   10374:	4942                	lw	s2,16(sp)
+   10376:	49b2                	lw	s3,12(sp)
+   10378:	40f2                	lw	ra,28(sp)
+   1037a:	44d2                	lw	s1,20(sp)
+   1037c:	6105                	addi	sp,sp,32
+   1037e:	8082                	ret
