@@ -20,7 +20,7 @@ backup/update/restore utilities, performance results and bilingual README.
 
 ### Verification
 
-- Flash read-back checks passed. Earlier builds also cold-booted successfully; this no-shared-seed build is undergoing its final cold-boot check.
+- Flash read-back and cold boot checks passed. The no-shared-seed image generated a local seed during preinit without missing-seed or permission warnings.
 - Writable overlay, AP, Ethernet, NTP and authenticated Chinese LuCI passed.
 - A 10-minute, 1790-request run produced p50 0.312s, p95 0.317s and p99 0.428s,
   with no OOM or HTTP 5xx.
@@ -56,7 +56,7 @@ before flashing. A full-image write or restore erases the complete flash.
 
 ### 已验证
 
-- 刷写回读通过；此前版本已冷启动。当前无共享随机种子版本正在进行最终冷启动确认。
+- 刷写回读与冷启动通过；无共享随机种子版本已在 preinit 生成本地种子，未出现缺失或权限警告。
 - 可写 overlay、AP、有线网络、NTP、中文 LuCI 真实登录通过。
 - 10 分钟 1790 请求：p50 0.312s、p95 0.317s、p99 0.428s，无 OOM/5xx。
 - 持久化后概览/接口中位时延分别为 0.300s 和 0.284s。

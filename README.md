@@ -20,7 +20,7 @@ router image. 这不是 OpenWrt 官方支持的开发板，也不是面向生产
 
 ### 已验证
 
-- 完整刷写与回读校验通过；此前版本已冷启动，当前无共享随机种子版本正在进行最终冷启动确认。
+- 完整刷写与回读校验通过；无共享随机种子版本已冷启动并生成本地种子，未见缺失或权限警告。
 - overlay 可写、AP-ENABLED、NTP 正常、网关 ping 无丢包。
 - 中文“概览”和“接口”页面真实登录均为 HTTP 200。
 - 768 持续 10 分钟、1790 个请求：p50 **0.312s**、p95 **0.317s**、p99 **0.428s**；
@@ -169,7 +169,7 @@ OpenWrt 专用配置位于 `linux/repo/br2-external/board/esp32s31/linux-openwrt
 
 ### Verified status
 
-- Flash write/read-back checks passed. Earlier builds also cold-booted successfully; this no-shared-seed build is undergoing its final cold-boot check.
+- Flash write/read-back and cold-boot checks passed. The no-shared-seed image generated a local seed during preinit without missing-seed or permission warnings.
 - Writable overlay, AP-ENABLED, NTP and gateway ping passed.
 - Authenticated Chinese “Overview” and “Interfaces” pages returned HTTP 200.
 - A 10-minute run of 1790 requests produced p50 **0.312s**, p95 **0.317s**,

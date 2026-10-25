@@ -143,8 +143,8 @@ c7099a1b0fc80e02ff7276aacbb08b5771e2f5c763fb76a7a8df3a89d58d8208  ./openwrt/esp3
 d0af4422d5f8a25b94a7eaa7c8aecbb088aeb10c988512149d95b2f5c904ee08  ./openwrt/esp32s31/target/linux/esp32s31/Makefile
 cacea437157710fe1028aed752ee98d3c470f56ca3f8d29ba476d5ab6d5beeb0  ./openwrt/esp32s31/target-mk-riscv32.diff
 539f5982e8a44bf92dd71ccf25b3c4b7194d27effd6fe6cdf03a75e3c0877cef  ./openwrt/esp32s31/toolchain-check/hello.c
-0e4b7d270716cfe181e1471b197eb763fd2efaaf447b61880c73d9290f799894  ./README.md
-e60b8d74285e32db8dd4d0485f70ab737ccb1eeb780fe20f8d9572f859bdfcbf  ./RELEASE.md
+ca45fb5af662e7519763a0eb5f2bc8c1cd9ccdfeb1939cfd3002dd1867cd76ed  ./README.md
+79c766be7693534d5b5dc9ada8475f16e7b9026ba9a6523e63a819892b43ed83  ./RELEASE.md
 d0b4d8070a090172ecc2dde1de93b370e48801689650b772c79923c785e88a01  ./tools/assemble-openwrt-flash.py
 a9e6803d53282046a1eefb268fd3b587b8d2a00f2b8b7e28ae37c25baaf0a86e  ./tools/backup-s31-flash.sh
 10c2c910cfbf86efdcfafac6aa21872ff232c3cf79cf6cc3733c70d41cfdc45e  ./tools/board-fetch.sh
