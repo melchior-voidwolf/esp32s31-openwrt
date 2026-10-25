@@ -34,7 +34,7 @@ compose_rootfs_mount_options() {
 }
 
 do_mount_root() {
-	if [ -d /overlay/upper ]; then
+	if [ -d /overlay/upper ] || [ -d /overlay/openwrt/upper ]; then
 		boot_run_hook preinit_mount_root
 		return 0
 	fi

@@ -47,10 +47,19 @@ def snapshot(label):
     return output
 
 
+def get_watermark():
+    output = board("cat /proc/sys/vm/min_free_kbytes")
+    for line in reversed(output.splitlines()):
+        value = line.strip()
+        if value.isdigit():
+            return int(value)
+    raise RuntimeError(f"could not parse watermark from: {output!r}")
+
+
 def set_watermark(value):
     board(f"printf '%s\\n' '{value}' > /proc/sys/vm/min_free_kbytes")
-    actual = board("cat /proc/sys/vm/min_free_kbytes").strip().splitlines()[-2].strip()
-    if actual != str(value):
+    actual = get_watermark()
+    if actual != value:
         raise RuntimeError(f"watermark mismatch: wanted {value}, got {actual}")
 
 

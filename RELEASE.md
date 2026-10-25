@@ -3,6 +3,13 @@
 Release date: 2026-10-25
 发布日期：2026-10-25
 
+> These are the historical v0.1.0 notes. For the later UBIFS + SquashFS DIRECT
+> development update, see `README.md` and the current `SHA256SUMS`; this file
+> does not imply a new release tag.
+>
+> 本文保留 v0.1.0 历史发布说明。后续 UBIFS + SquashFS DIRECT 开发更新见
+> `README.md` 和当前 `SHA256SUMS`；此处不代表已创建新的发布标签。
+
 ## English
 
 This is the first packaged development release of ESP32-S31 OpenWrt for the

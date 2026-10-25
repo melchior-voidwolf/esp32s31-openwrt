@@ -15,8 +15,13 @@ ESP ROM → ESP-IDF bootloader → loader (hart0) → OpenSBI (hart1)
   it with desktop or Buildroot flash configurations.
 - The root filesystem is ilp32f musl. The CPU has single-precision FPU support,
   but no double-precision D extension.
-- The current overlay is tmpfs. It is writable at runtime but is not persistent
-  across reboot.
+- The persistent overlay uses UBIFS on the existing UBI data volume, with
+  OpenWrt-specific `/overlay/openwrt/{upper,work}` directories. The all-empty-MTD
+  initialization path still needs hardware acceptance; non-UBI data is not
+  explicitly erased.
+- `SQUASHFS_FILE_DIRECT` decompresses directly into page-cache pages instead of
+  using an intermediate buffer and a second copy. See the bilingual performance
+  section and A/B table in `README.md` for measurements and limitations.
 - `uhttpd-mod-ucode` preinitializes the VM at startup. Each request still forks,
   but does not exec a new ucode interpreter.
 
@@ -75,7 +80,10 @@ a real serial-shell response. These checks are not a substitute for a backup.
 - 当前启动链为 `flash-init → mtdblock0 squashfs → procd`，rootfs 是 ilp32f musl。
 - `openwrt/esp32s31/files/` 是板级 overlay 权威源；`linux-openwrt.config` 独立，
   不与桌面或 Buildroot flash 配置混用。
-- 当前 overlay 是 tmpfs，运行时可写但重启丢修改，不是持久 UBIFS。
+- 当前使用现有 UBI data 卷上的持久 UBIFS overlay，OpenWrt 独立使用
+  `/overlay/openwrt/{upper,work}`；全空 MTD 初始化仍需板上验收，非 UBI 数据不会被主动擦除。
+- `SQUASHFS_FILE_DIRECT` 直接解压到页缓存，省去中间缓冲区和第二次复制；
+  中英文性能机制、对照数据与限制见 `README.md`。
 - ucode 插件在启动时预初始化 VM；每请求仍 fork，但不 exec 新解释器。
 - `vm.min_free_kbytes=768` 已写入只读 rootfs，因此每次启动都会应用。
 - 公开镜像不带开发者的共享随机种子，preinit 会在本机生成新的随机种子。

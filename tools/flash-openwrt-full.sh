@@ -33,6 +33,7 @@ flash() {
   return 1
 }
 
+owrt_sync_console
 owrt_stop_console
 flash || { echo "FULL IMAGE FLASH FAILED"; tail -8 /tmp/ef-openwrt-full.log; exit 1; }
 echo "FULL_IMAGE_FLASH_OK (entire flash including data was replaced)"

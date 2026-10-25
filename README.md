@@ -21,19 +21,49 @@ router image. 这不是 OpenWrt 官方支持的开发板，也不是面向生产
 ### 已验证
 
 - 完整刷写与回读校验通过；无共享随机种子版本已冷启动并生成本地种子，未见缺失或权限警告。
-- overlay 可写、AP-ENABLED、NTP 正常、网关 ping 无丢包。
-- 中文“概览”和“接口”页面真实登录均为 HTTP 200。
-- 768 持续 10 分钟、1790 个请求：p50 **0.312s**、p95 **0.317s**、p99 **0.428s**；
-  >1s 占 **0.39%**，>2s 占 **0.22%**，无 OOM/5xx/超时。
-- 持久化后概览 p50 **0.300s**、接口 p50 **0.284s**。
+- AP-ENABLED、NTP 正常、网关 ping 无丢包；中文“概览”和“接口”页面真实登录均为 HTTP 200。
+- **UBIFS 持久 overlay 已通过真实重启验证**：测试文件在根文件系统和 UBIFS upper 中一致，Buildroot 的 `/upper`、`/work` 保持独立。
+- `SQUASHFS_FILE_DIRECT` 的 12 分钟持续测试中，**1357 次请求全部 HTTP 200，无 OOM、5xx 或超时**，最终 `MemAvailable=1052KiB`。
+
+### 性能优化：原理与实测
+
+这次优化分为两个独立部分，不把内核裁剪的收益与 DIRECT 的收益混算：
+
+1. **内核减负解决稳定性**：把无效的 `# CONFIG_X=y (dropped)` 改为真正的
+   `# CONFIG_X is not set`，移除 JFFS2、HID 和多余 USB 网卡，Image 减少
+   **192,432 bytes**，为 UBIFS 留出内存，避免启动期连续 OOM。
+2. **DIRECT 缩短解压路径**：旧 `SQUASHFS_FILE_CACHE` 路径是
+   `Flash → XZ 解压到中间缓冲区 → memcpy 到页缓存`；新
+   `SQUASHFS_FILE_DIRECT` 路径是 `Flash → 直接解压到页缓存`。effective
+   配置同时使用适合单核的 `SQUASHFS_DECOMP_SINGLE`。
+3. **减少缓存抖动**：少了中间缓冲区和一次复制，降低内存回收与重复 Flash
+   读取。实测 DIRECT 在完成更多请求的同时 MTD 读取量反而更低，因此主要改善的是
+   缓存未命中和内存回收造成的长尾，不是所有指令都等比加速。
+
+相同 UBIFS、`vm.min_free_kbytes=768`、12 分钟 LuCI 认证请求对照：
+
+| 指标 | FILE_CACHE | SQUASHFS_FILE_DIRECT |
+|---|---:|---:|
+| 完成请求数 | 806 | **1357（+68.4%）** |
+| p50 | 0.324s | **0.312s** |
+| p95 | 4.237s | **2.162s** |
+| p99 | 5.534s | **3.824s** |
+| >1s 请求比例 | 18.49% | **8.33%** |
+| 结束 MemAvailable | 948KiB | **1052KiB** |
+| OOM / 5xx / 超时 | 均无 | 均无 |
+
+这里的 **+68.4% 是这组 LuCI 负载在固定 12 分钟内完成请求数的提升**，不是全系统
+统一提速。典型热缓存请求仍受 uhttpd/ucode/fork/ubus 等路径限制，p50 只小幅改善；
+长尾显著减少但未消失。原始数据和复现脚本见
+`openwrt/bench/ubifs-slim-20261025/`、`openwrt/bench/ubifs-direct-20261025/`。
 
 ### 重要限制
 
 - **仅支持 Korvo-1**，不要刷到其他 ESP32/ESP32-S3/S31 开发板。
-- **开放 AP**：当前没有可用的 WPA2 softAP 配置，不能当作安全路由器使用。
-- **安全默认值**：默认 root 密码和 HTTP 明文管理只适合隔离/可信实验网络；不要暴露到不可信网络。运行时改密在 tmpfs overlay 上重启会丢失，生产使用应重新构建自己的安全配置。
-- 无线首次关联偶发失败，这是当前 ESP-Hosted 固件路径的已知问题。
-- 当前 overlay 是 **tmpfs**，重启会丢失运行时修改，**不是持久 UBIFS**。
+- **开放 AP**：默认仍是开放网络；WPA2 开发配置只验证到 `AP-ENABLED`，尚未通过真实客户端关联，不能当作安全路由器使用。
+- **安全默认值**：默认 root 密码和 HTTP 明文管理只适合隔离/可信实验网络。持久 UBIFS 会保存改密等运行时修改，但这不改变镜像默认凭据不安全的起点；首次登录后应改密，不要暴露到不可信网络。
+- 无线首次关联仍需真实客户端回归，不能把 ESP-Hosted 的 AP-ENABLED 日志视为首连问题已修复。
+- **持久化边界**：目前验证的是复用已有 UBI data 卷；全空 MTD 的初始化路径尚未板上验收，非 UBI 数据不会被主动擦除，失败时回退 tmpfs（此时修改重启丢失）。Buildroot 回切交叉验收尚未完成。
 - Linux `MemTotal` 约 **10.8 MiB**；16 MiB 是 flash 容量，不是可用 RAM。`MemAvailable` 仍低于 3 MiB 的目标；LuCI 长尾只是显著减少，并未完全消失。
 - 不包含 X、音频、摄像头、Matter/OTBR，也不包含 SSH 服务端；Bluetooth 功能未在本 OpenWrt 镜像中验收。
 - 网络由 `lanstatic` 直接配置，未验证标准 NAT、DHCP 服务器、防火墙或 LuCI 网络保存/应用。
@@ -45,7 +75,7 @@ router image. 这不是 OpenWrt 官方支持的开发板，也不是面向生产
 
 | 文件 | 用途 |
 |---|---|
-| `build/korvo1-openwrt/Image-7.3-flash-initramfs` | Linux 7.3 与 flash-init |
+| `build/korvo1-openwrt/Image-7.3-flash-initramfs` | Linux 7.3、flash-init、UBIFS 与 SquashFS DIRECT |
 | `build/korvo1-openwrt/linux.size` | 内核 magic/size/CRC32 manifest |
 | `build/korvo1-openwrt/rootfs.squashfs` | ilp32f OpenWrt rootfs，含 768 配置 |
 | `build/korvo1-openwrt/openwrt-flash-16m.img` | 完整 16 MiB 镜像，**会擦除全部 flash** |
@@ -170,26 +200,57 @@ OpenWrt 专用配置位于 `linux/repo/br2-external/board/esp32s31/linux-openwrt
 ### Verified status
 
 - Flash write/read-back and cold-boot checks passed. The no-shared-seed image generated a local seed during preinit without missing-seed or permission warnings.
-- Writable overlay, AP-ENABLED, NTP and gateway ping passed.
-- Authenticated Chinese “Overview” and “Interfaces” pages returned HTTP 200.
-- A 10-minute run of 1790 requests produced p50 **0.312s**, p95 **0.317s**,
-  p99 **0.428s**, with **0.39%** over 1s and **0.22%** over 2s, without
-  OOM, HTTP 5xx or timeouts.
-- After persistence, the overview and interface medians were **0.300s** and
-  **0.284s** respectively.
+- AP-ENABLED, NTP and gateway ping passed. Authenticated Chinese “Overview” and “Interfaces” pages returned HTTP 200.
+- **The persistent UBIFS overlay passed a real reboot test:** the test file matched in the root filesystem and the UBIFS upper directory, while Buildroot's `/upper` and `/work` remained separate.
+- A 12-minute `SQUASHFS_FILE_DIRECT` run completed **1357 authenticated LuCI requests with HTTP 200 throughout and no OOM, HTTP 5xx or timeouts**, ending with `MemAvailable=1052KiB`.
+
+### Performance optimization: mechanism and measurements
+
+Kernel slimming and DIRECT address different problems, so their effects are not
+lumped together:
+
+1. **Kernel slimming improves stability.** Ineffective
+   `# CONFIG_X=y (dropped)` comments were changed to real
+   `# CONFIG_X is not set` entries. Removing JFFS2, HID and unused USB NIC
+   drivers reduced the Image by **192,432 bytes**, leaving enough memory for
+   UBIFS instead of repeated boot-time OOM kills.
+2. **DIRECT shortens the decompression path.** `SQUASHFS_FILE_CACHE` uses
+   `Flash → XZ decompress into an intermediate buffer → memcpy into page cache`.
+   `SQUASHFS_FILE_DIRECT` uses `Flash → decompress directly into page-cache pages`.
+   The effective configuration also selects `SQUASHFS_DECOMP_SINGLE`, matching
+   the single-CPU board.
+3. **Less cache churn.** Removing an intermediate buffer and a copy reduces
+   reclaim pressure and repeated Flash reads. DIRECT completed more requests
+   while recording fewer MTD reads, so its main benefit is fewer cache-miss and
+   reclaim stalls, not a uniform speedup for every instruction.
+
+Same UBIFS setup, `vm.min_free_kbytes=768`, and 12 minutes of authenticated LuCI
+requests:
+
+| Metric | FILE_CACHE | SQUASHFS_FILE_DIRECT |
+|---|---:|---:|
+| Completed requests | 806 | **1357 (+68.4%)** |
+| p50 | 0.324s | **0.312s** |
+| p95 | 4.237s | **2.162s** |
+| p99 | 5.534s | **3.824s** |
+| Requests over 1s | 18.49% | **8.33%** |
+| Final MemAvailable | 948KiB | **1052KiB** |
+| OOM / HTTP 5xx / timeouts | None | None |
+
+The **68.4% gain is the number of completed requests in this fixed-duration LuCI
+workload**, not a system-wide performance claim. Hot-cache requests are still
+bounded by uhttpd/ucode/fork/ubus and similar work, so p50 changes only slightly.
+Tail latency is substantially reduced, not eliminated. Raw data and reproduction
+scripts are in `openwrt/bench/ubifs-slim-20261025/` and
+`openwrt/bench/ubifs-direct-20261025/`.
 
 ### Important limitations
 
 - **Korvo-1 only.** Do not flash this image onto other boards.
-- The AP is **open**. A working WPA2 softAP configuration is not available;
-  this is not a secure production router configuration.
-- **Security defaults:** the documented root password and plain HTTP management
-  are for isolated/trusted lab networks only. Do not expose them to untrusted
-  networks. Password changes in tmpfs are lost on reboot; rebuild with your own
-  security configuration for any real deployment.
-- The first wireless association can fail occasionally in the current
-  ESP-Hosted firmware path.
-- The overlay is **tmpfs**, not persistent UBIFS. Runtime changes are lost on reboot.
+- The AP is **open** by default. The development WPA2 configuration reached only `AP-ENABLED`; no real client association has been validated, so this is not a secure production router configuration.
+- **Security defaults:** the documented root password and plain HTTP management are for isolated/trusted lab networks only. Persistent UBIFS retains password changes and other runtime modifications, but it does not make the insecure defaults safe. Change the password after the first login and do not expose management to untrusted networks.
+- First-association behavior still needs a real-client regression test; an ESP-Hosted AP-ENABLED log does not prove that the issue is fixed.
+- **Persistence boundaries:** validation currently covers an existing UBI data volume. The all-empty-MTD initialization path has not been accepted on hardware. Non-UBI data is not explicitly erased; failure falls back to tmpfs, where changes are lost on reboot. A Buildroot switch-back cross-check has not been completed.
 - Linux `MemTotal` is about **10.8 MiB**; 16 MiB is flash capacity, not usable RAM.
   `MemAvailable` remains below the 3 MiB target. LuCI tail latency is reduced,
   not eliminated.
@@ -205,7 +266,7 @@ OpenWrt 专用配置位于 `linux/repo/br2-external/board/esp32s31/linux-openwrt
 
 ### Package contents
 
-- `Image-7.3-flash-initramfs`: Linux 7.3 and flash-init.
+- `Image-7.3-flash-initramfs`: Linux 7.3, flash-init, UBIFS and SquashFS DIRECT.
 - `linux.size`: kernel magic/size/CRC32 manifest.
 - `rootfs.squashfs`: ilp32f OpenWrt rootfs with the 768 setting.
 - `openwrt-flash-16m.img`: complete 16 MiB image; **erases the entire flash**.

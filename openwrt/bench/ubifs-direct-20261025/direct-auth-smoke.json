@@ -1,0 +1,48 @@
+{
+  "overview": [
+    {
+      "request": 1,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.9315181430138182,
+      "total": 1.3638849389972165
+    },
+    {
+      "request": 2,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.4844045639911201,
+      "total": 0.49866941300570033
+    },
+    {
+      "request": 3,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.31846870700246654,
+      "total": 0.32892147201346233
+    },
+    {
+      "request": 4,
+      "status": 200,
+      "bytes": 4237,
+      "starttransfer": 0.30998038497637026,
+      "total": 0.32047709097969346
+    }
+  ],
+  "network": [
+    {
+      "request": 1,
+      "status": 200,
+      "bytes": 3179,
+      "starttransfer": 0.29940244898898527,
+      "total": 0.30631995099247433
+    },
+    {
+      "request": 2,
+      "status": 200,
+      "bytes": 3179,
+      "starttransfer": 0.2869463620008901,
+      "total": 0.30381220698473044
+    }
+  ]
+}

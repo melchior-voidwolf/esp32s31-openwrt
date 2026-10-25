@@ -41,6 +41,7 @@ def summarize(rows):
 
 
 def main():
+    original_watermark = vm.get_watermark()
     session = vm.luci.login()
     rows = []
     started = time.monotonic()
@@ -61,8 +62,8 @@ def main():
             if index % 60 == 0:
                 print(f"SOAK_PROGRESS seconds={elapsed} requests={index}", flush=True)
     finally:
-        vm.set_watermark(1024)
-        vm.snapshot("soak-restored-1024")
+        vm.set_watermark(original_watermark)
+        vm.snapshot(f"soak-restored-{original_watermark}")
         vm.luci.logout(session)
 
     by_minute = collections.defaultdict(list)

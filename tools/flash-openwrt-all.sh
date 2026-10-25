@@ -19,6 +19,7 @@ RFS="$ROOT/build/korvo1-openwrt/rootfs.squashfs"
 
 python3 -I "$ROOT/tools/validate-openwrt-images.py" \
   --kernel "$IMG" --manifest "$SIZE" --rootfs "$RFS"
+owrt_sync_console
 owrt_stop_console
 
 flash() {

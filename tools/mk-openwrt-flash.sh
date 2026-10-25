@@ -12,7 +12,7 @@ ROOTFS=$B/rootfs.squashfs
 BOOT2=$LR/build/korvo1/bootloader/bootloader/bootloader.bin
 PTABLE=$LR/build/korvo1/bootloader/partition_table/partition-table.bin
 LOADER=${OPENWRT_LOADER:-$LR/build/korvo1/bootloader/s31-linux-loader.bin}
-LOADER_CONFIG=${OPENWRT_SDKCONFIG:-$LR/build/korvo1/sdkconfig}
+LOADER_CONFIG=${OPENWRT_SDKCONFIG:-$LR/build/korvo1/bootloader/sdkconfig}
 SBI=$LR/build/korvo1/opensbi.bin
 MANIFEST=$B/linux.size
 

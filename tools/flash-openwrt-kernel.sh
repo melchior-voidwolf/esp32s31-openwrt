@@ -18,6 +18,7 @@ SIZE="${2:-$ROOT/build/korvo1-openwrt/linux.size}"
 
 python3 -I "$ROOT/tools/validate-openwrt-images.py" \
   --kernel "$IMG" --manifest "$SIZE"
+owrt_sync_console
 owrt_stop_console
 
 flash() {
